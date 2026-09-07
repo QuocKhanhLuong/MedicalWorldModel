@@ -1,0 +1,56 @@
+# Source of truth — tình trạng và ràng buộc dự án
+
+Cập nhật: **2026-09-07** · Múi giờ: **Asia/Bangkok**.
+
+Nguồn khởi tạo: yêu cầu định hình paper Medical World Model và yêu cầu chỉ định repo của chủ dự án trong cuộc thảo luận ngày 07/09/2026. Đây là hồ sơ quyết định/phạm vi, không phải bằng chứng rằng một giả thuyết khoa học đã đúng.
+
+## 1. Những điều đã xác nhận
+
+| Mục | Tình trạng đã xác nhận |
+| --- | --- |
+| Repo chính thức | `QuocKhanhLuong/MedicalWorldModel` |
+| Loại dự án | Nghiên cứu một paper Medical World Model |
+| Nền tảng của người nghiên cứu | AI/Computer Vision |
+| Giai đoạn | Làm rõ bản chất và lựa chọn thiết lập nghiên cứu trước kiến trúc |
+| Câu hỏi trung tâm | Dự đoán trạng thái tiếp theo của cái gì, từ thông tin nào, chuyển tiếp như thế nào, phục vụ mục tiêu gì? |
+| Quan hệ với paper dataset | Dự án dataset riêng đã chọn siêu âm; paper world model không bắt buộc dùng siêu âm hoặc dùng chung dữ liệu |
+| Quy ước lưu trữ | Khi source of truth hoặc knowledge base có thay đổi có ý nghĩa, chủ động viết/cập nhật docs và đẩy vào repo trong lượt làm việc tương ứng |
+
+## 2. Ràng buộc nghiên cứu do chủ dự án đặt ra
+
+- Giải thích trực giác và ví dụ input → state → transition → output trước công thức.
+- Phân biệt observation, state, lịch sử, latent, động học tự diễn tiến, action-conditioned dynamics, next-frame prediction, time-series model, world model và policy bằng định nghĩa vận hành.
+- So sánh ít nhất A: sinh lý/hình dạng cơ quan; B: thu nhận ảnh; C: bệnh/tổn thương qua các lần khám hoặc điều trị.
+- Mỗi thiết lập cần có thời gian, dữ liệu/nhãn, baseline, đánh giá nhiều bước, kiểm tra state, công trình gần, gap ứng viên, rủi ro và thí nghiệm bác bỏ.
+- Đối chiếu paper gốc và trạng thái công bố. Không gọi mọi video predictor là world model; không bắt buộc world model phải có robot hoặc action.
+- Không coi latent feature tự động là trạng thái lâm sàng có ý nghĩa; không suy diễn nhân quả từ tương quan trong dữ liệu quan sát.
+- Chưa chọn backbone, diffusion, Transformer hoặc kiến trúc phức tạp.
+
+## 3. Những điều CHƯA xác nhận
+
+Chưa chốt cơ quan, bệnh, modality, dataset, quy mô, nhãn, metadata, horizon, endpoint sử dụng, định nghĩa state cuối cùng, baseline cuối cùng hoặc kiến trúc.
+
+Chưa xác nhận quyền truy cập dữ liệu longitudinal, lịch điều trị, chuyển động đầu dò, robot hoặc dữ liệu từ cộng tác viên. Một nguồn dữ liệu được nhắc tới trong survey không đồng nghĩa với dữ liệu đã được tải, đã audit hoặc đã đủ quyền sử dụng.
+
+Chưa có kết quả thực nghiệm, benchmark đã chạy hoặc bằng chứng về tính mới. Việc repo được khởi tạo không có nghĩa pipeline nghiên cứu đã triển khai.
+
+## 4. Đề xuất hiện có — chưa phải quyết định của chủ dự án
+
+Trợ lý đề xuất khảo sát sâu trước hai thiết lập:
+
+- **A1:** dự báo trạng thái chuyển động/hình dạng mục tiêu trên cine-MRI, không cần action.
+- **C1:** dự báo tổn thương longitudinal dưới bối cảnh chăm sóc quan sát được, không tuyên bố nhân quả điều trị.
+
+**B vẫn là ứng viên**, không bị loại. Chủ dự án chưa chọn A1, C1 hoặc B. Chi tiết và tiêu chí dừng ở [RESEARCH_SETUPS.md](RESEARCH_SETUPS.md).
+
+## 5. Câu hỏi mở quyết định bước tiếp theo
+
+1. Có thể tiếp cận nguồn dữ liệu nào, với điều kiện sử dụng và thông tin thời gian/nhãn thực tế ra sao?
+2. Horizon và đầu ra nào có mục tiêu sử dụng rõ ràng, thay vì chỉ dự báo ảnh kế tiếp?
+3. Lịch sử có thông tin dự báo bổ sung so với quan sát hiện tại và state đơn giản không?
+4. Baseline nào đủ mạnh để bác bỏ nhu cầu mô hình phức tạp?
+5. Có thể kiểm tra nhiều bước, bất định và giá trị state mà không nhìn tương lai hoặc rò rỉ bệnh nhân không?
+
+## 6. Thứ tự công việc đề xuất
+
+Xác minh nguồn → audit khả thi dữ liệu → định nghĩa endpoint/horizon → baseline nhỏ → đánh giá lợi ích lịch sử và state → quyết định thiết lập → mới xem xét kiến trúc. Đây là trình tự đề xuất; chưa ghi nhận thí nghiệm nào đã thực hiện.
