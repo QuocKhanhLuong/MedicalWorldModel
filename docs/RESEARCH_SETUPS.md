@@ -1,8 +1,8 @@
 # Các thiết lập nghiên cứu ứng viên
 
-Cập nhật: **2026-09-07**.
+Cập nhật: **2026-09-12**.
 
-**Trạng thái:** đề xuất từ thảo luận, chưa được chủ dự án chọn. Các nguồn dữ liệu/paper là đầu mối cần xác minh tại [REFERENCES.md](REFERENCES.md); không xác nhận dữ liệu đã sẵn có, đủ nhãn hoặc đủ quyền sử dụng. Không có claim novelty đã được chứng minh.
+**Trạng thái:** A/B/C từ thảo luận vẫn chưa được chủ dự án chọn. Đợt survey 2026-09-12 đã đối chiếu nguồn ở [REFERENCES.md](REFERENCES.md), nhưng không xác nhận dữ liệu đã sẵn có, đủ nhãn hoặc đủ quyền sử dụng. Không có claim novelty đã được chứng minh. Các câu hỏi chi tiết, prior art, horizon đề xuất và falsifiers mới ở [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md); feasibility từng nguồn ở [DATASET_FEASIBILITY.md](DATASET_FEASIBILITY.md).
 
 ## A. Động học sinh lý/hình dạng cơ quan
 
@@ -20,7 +20,7 @@ Cập nhật: **2026-09-07**.
 
 **Đánh giá:** sai số tâm/bề mặt, Dice theo horizon, hướng/vận tốc, hiệu chuẩn và độ rộng khoảng dự báo; phân tích đoạn đổi hướng so với chuyển động ổn định. Tách rollout không cập nhật với tracking được nhận frame mới. Kiểm tra cùng state cho cả vị trí lẫn hình dạng.
 
-**Công trình cần đối chiếu:** dự báo cine-MRI bằng biểu diễn chuyển động PCA; mô hình động học cine tim. Phân biệt dự báo từ prefix với tái dựng dùng cả chu kỳ.
+**Công trình đã đối chiếu trong survey:** [PCA cine forecasting](PAPER_MATRIX.md#m09), [cardiac ODE](PAPER_MATRIX.md#m10), [linear gating](PAPER_MATRIX.md#m21). Phân biệt dự báo từ prefix với tái dựng dùng cả chu kỳ; cần bổ sung PCA+linear/Kalman/GP vào baseline đủ mạnh.
 
 **Gap ứng viên:** history hình dạng có giúp hơn vị trí–vận tốc đơn giản ở đổi hướng hoặc chuyển động không đều không? **Rủi ro:** baseline đã đủ tốt; chỉ học chu kỳ; thời gian không đáng tin; nhãn đại diện khác mục tiêu; rò rỉ người bệnh.
 
@@ -40,7 +40,7 @@ Cập nhật: **2026-09-07**.
 
 **Đánh giá:** landmark/cấu trúc giải phẫu, nhất quán khi quay lại vùng đã thấy, rollout qua nhiều thao tác, bất định khi ra ngoài vùng có bằng chứng; chia theo người và quỹ đạo. So state từ một frame với history tại những lát cắt hiện tại mơ hồ.
 
-**Công trình cần đối chiếu:** EchoWorld; Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound. Chưa coi metadata công bố trong thảo luận là đã xác minh ở lần khởi tạo docs này.
+**Công trình đã đối chiếu trong survey:** [EchoWorld](PAPER_MATRIX.md#m02), [robot US WM](PAPER_MATRIX.md#m03), [Hu pose-conditioned synthesis 2017](PAPER_MATRIX.md#m23). Giữ offline guidance, measured displacement và commanded-action closed-loop evidence riêng; không giả định có public release của cohort tác giả.
 
 **Gap ứng viên:** state tích lũy có phân biệt được vùng có đủ bằng chứng để dự đoán và vùng chưa biết, đồng thời giữ nhất quán nhiều bước không? **Rủi ro:** pose/lực tiếp xúc/sinh lý bị trộn; baseline hình học đã đủ; đánh giá policy chỉ trong mô hình do chính nó tối ưu.
 
@@ -62,13 +62,13 @@ Cập nhật: **2026-09-07**.
 
 **Đánh giá:** sai số burden và thay đổi burden, phần không gian thực sự thay đổi, endpoint tiến triển khi có nhãn phù hợp, hiệu chuẩn theo horizon. Không để nền không đổi chi phối metric ảnh. Rollout nhiều visit không được nhận lại ảnh tương lai thật.
 
-**Công trình cần đối chiếu:** ImageFlowNet, Δ-LFM, TaDiff. Kiểm tra input, số visit, treatment metadata, split và phạm vi các tuyên bố trước khi kết luận gap.
+**Công trình đã đối chiếu trong survey:** [ImageFlowNet](PAPER_MATRIX.md#m05), [Δ-LFM](PAPER_MATRIX.md#m07), [TaDiff](PAPER_MATRIX.md#m06), [Petersen](PAPER_MATRIX.md#m17), [Lachinov](PAPER_MATRIX.md#m18), [BrLP](PAPER_MATRIX.md#m08), [Bayesian digital twins](PAPER_MATRIX.md#m20). Memory, continuous time và multi-hypothesis không mới tự thân; cần thu hẹp vào endpoint/data/protocol được kiểm tra.
 
 **Gap ứng viên:** history không gian có ích hơn burden hiện tại cộng xu hướng tăng/giảm đơn giản không? **Rủi ro:** ít chuỗi hợp lệ; nhãn tự động không tin cậy; thay đổi hậu điều trị hoặc quy trình bị hiểu sai; confounding; overlap với công trình trước.
 
 **Thí nghiệm bác bỏ nhỏ:** bắt đầu bằng burden/shape thay vì sinh toàn ảnh; audit nhãn trên tập nhỏ và so ba mức thông tin. Dừng hoặc đổi hướng nếu nhãn không phân biệt được tín hiệu thay đổi, thiếu chuỗi đánh giá hoặc history không có lợi ích bổ sung đáng tin cậy.
 
-## Hai thiết lập đề xuất khảo sát sâu trước
+## Lịch sử: hai thiết lập trợ lý đề xuất ngày 2026-09-07
 
 | Thiết lập | Điều kiện để đi tiếp | Điều chưa được chốt |
 | --- | --- | --- |
@@ -76,3 +76,5 @@ Cập nhật: **2026-09-07**.
 | C1: tổn thương longitudinal không nhân quả | Đủ chuỗi nhiều visit, thời gian và nhãn audit được; history có tín hiệu hơn current burden/trend | Bệnh cuối, cohort cuối, endpoint cuối, treatment model, kiến trúc |
 
 Đây là ưu tiên khảo sát do trợ lý đề xuất, **không phải quyết định chọn đề tài của chủ dự án**. B vẫn có thể được ưu tiên lại khi điều kiện dữ liệu và mục tiêu sử dụng rõ hơn.
+
+Đợt 2026-09-12 mở rộng thành Q1–Q8 ở [OPEN_QUESTIONS](OPEN_QUESTIONS.md), gồm cả B và các bệnh/cơ quan khác. Bảng cũ được giữ để bảo toàn lịch sử; không mặc định A1/C1 đã được chọn hoặc có ưu thế dữ liệu đã xác nhận.

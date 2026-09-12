@@ -1,8 +1,8 @@
-# Knowledge base — khung khái niệm ban đầu
+# Knowledge base — khung khái niệm và bằng chứng nghiên cứu
 
-Cập nhật: **2026-09-07**.
+Cập nhật: **2026-09-12**.
 
-**Trạng thái:** bản tổng hợp từ thảo luận; các định nghĩa dưới đây là quy ước vận hành để thiết kế nghiên cứu, không phải tuyên bố đồng thuận duy nhất của lĩnh vực. Ví dụ là minh họa, không phải kết quả thực nghiệm. Metadata paper/dataset được quản lý riêng tại [REFERENCES.md](REFERENCES.md).
+**Trạng thái:** các mục 1–8 là khung vận hành từ thảo luận, không phải tuyên bố đồng thuận duy nhất của lĩnh vực. Ví dụ là minh họa, không phải kết quả thực nghiệm. Mục 9 bổ sung nguồn và diễn giải từ survey 2026-09-12; metadata/mức đọc ở [REFERENCES.md](REFERENCES.md).
 
 ## 1. State của cái gì?
 
@@ -82,3 +82,17 @@ Câu hỏi kiểm tra state: sau khi có `z_t`, phần history bị bỏ đi cò
 | Giá trị sử dụng | Metric gắn với hình học, chức năng hoặc endpoint đã định trước, không chỉ độ đẹp ảnh sinh |
 
 Chưa có thực nghiệm nào xác nhận các giả thuyết của dự án. Quy trình này dùng để quyết định mô hình có cần thiết hay không trước khi tăng độ phức tạp.
+
+## 9. Cập nhật sau đối chiếu nguồn 2026-09-12
+
+**VERIFIED:** medical prior art đã có continuous-time future segmentation, stochastic trajectories, patient-history adaptation, explicit motion state và một số robot policy evaluations. Ví dụ: [Petersen 2021](PAPER_MATRIX.md#m17), [Lachinov TMI 2024](PAPER_MATRIX.md#m18), [ImageFlowNet](PAPER_MATRIX.md#m05), [PCA respiratory forecasting](PAPER_MATRIX.md#m09), [Cosmos-Surg-dVRK](PAPER_MATRIX.md#m16). Không còn cơ sở cho gap rộng “y học chưa có state/uncertainty/planning”.
+
+**INTERPRETATION / HYPOTHESIS:** định nghĩa dùng cho đợt nghiên cứu này là: **Medical Visual World Model mô hình hóa một hệ y khoa xác định, suy state/belief từ thông tin thị giác và lịch sử khả dụng, dùng transition theo thời gian/input để dự báo đại lượng tương lai có mục đích, và kiểm tra nhiều horizon cùng giá trị của state/transition cho mục đích đó.** Đây là quy ước đề xuất, không chọn clinical state hoặc kiến trúc cụ thể.
+
+**VERIFIED:** [Pohl §2.3.3](https://arxiv.org/abs/2410.05882v3) dùng separate direct predictor theo horizon; [cardiac ODE](https://arxiv.org/html/2606.26718) encode whole cycle; [EchoWorld](https://arxiv.org/html/2504.13065) dùng observed history cho guidance. **INTERPRETATION:** phải tách direct multi-horizon, recursive rollout, filtering với ảnh mới và full-sequence reconstruction; không dùng chung nhãn “long rollout”.
+
+**VERIFIED:** [Fan et al. §II-D/IV](https://arxiv.org/html/2607.21918v2) có low-level force control nhưng WM input là image/pose. **INTERPRETATION:** pose-conditioned observation prediction, commanded-action transition và contact-induced deformation là ba claim khác nhau.
+
+**VERIFIED:** [BrLP §5.6](https://arxiv.org/html/2502.08560) đã đo uncertainty–error association; [Petersen](https://arxiv.org/html/2106.12917) có oracle future-volume-conditioned selection metric. **INTERPRETATION:** distribution diversity, correlation với error, calibration và deployable selection utility phải chấm riêng.
+
+Hợp đồng dữ liệu, các rủi ro prefix preprocessing và map năng lực CV → cơ hội y khoa ở [medical survey](surveys/MEDICAL_WORLD_MODELS_SURVEY.md), [transfer gaps](surveys/TRANSFER_GAPS.md). Chưa có gap nào được xác nhận novel hoặc trở thành quyết định của chủ dự án.

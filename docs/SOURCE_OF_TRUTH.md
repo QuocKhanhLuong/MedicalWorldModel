@@ -1,6 +1,6 @@
 # Source of truth — tình trạng và ràng buộc dự án
 
-Cập nhật: **2026-09-07** · Múi giờ: **Asia/Bangkok**.
+Cập nhật: **2026-09-12** · Múi giờ: **Asia/Bangkok**.
 
 Nguồn khởi tạo: yêu cầu định hình paper Medical World Model và yêu cầu chỉ định repo của chủ dự án trong cuộc thảo luận ngày 07/09/2026. Đây là hồ sơ quyết định/phạm vi, không phải bằng chứng rằng một giả thuyết khoa học đã đúng.
 
@@ -12,6 +12,7 @@ Nguồn khởi tạo: yêu cầu định hình paper Medical World Model và yê
 | Loại dự án | Nghiên cứu một paper Medical World Model |
 | Nền tảng của người nghiên cứu | AI/Computer Vision |
 | Giai đoạn | Làm rõ bản chất và lựa chọn thiết lập nghiên cứu trước kiến trúc |
+| Hồ sơ nghiên cứu mới | Survey nguồn sơ cấp ngày 2026-09-12: 55 paper, 13 hồ sơ data release, 8 câu hỏi ứng viên; chưa chạy thí nghiệm hoặc audit patient-level data |
 | Câu hỏi trung tâm | Dự đoán trạng thái tiếp theo của cái gì, từ thông tin nào, chuyển tiếp như thế nào, phục vụ mục tiêu gì? |
 | Quan hệ với paper dataset | Dự án dataset riêng đã chọn siêu âm; paper world model không bắt buộc dùng siêu âm hoặc dùng chung dữ liệu |
 | Quy ước lưu trữ | Khi source of truth hoặc knowledge base có thay đổi có ý nghĩa, chủ động viết/cập nhật docs và đẩy vào repo trong lượt làm việc tương ứng |
@@ -36,12 +37,14 @@ Chưa có kết quả thực nghiệm, benchmark đã chạy hoặc bằng chứ
 
 ## 4. Đề xuất hiện có — chưa phải quyết định của chủ dự án
 
-Trợ lý đề xuất khảo sát sâu trước hai thiết lập:
+Trong thảo luận ngày 2026-09-07, trợ lý đề xuất khảo sát sâu trước hai thiết lập:
 
 - **A1:** dự báo trạng thái chuyển động/hình dạng mục tiêu trên cine-MRI, không cần action.
 - **C1:** dự báo tổn thương longitudinal dưới bối cảnh chăm sóc quan sát được, không tuyên bố nhân quả điều trị.
 
 **B vẫn là ứng viên**, không bị loại. Chủ dự án chưa chọn A1, C1 hoặc B. Chi tiết và tiêu chí dừng ở [RESEARCH_SETUPS.md](RESEARCH_SETUPS.md).
+
+Ngày 2026-09-12, nghiên cứu nguồn mở rộng thành [8 câu hỏi và ranking để ưu tiên audit](OPEN_QUESTIONS.md), bao phủ cả A/B/C. Ranking là **INTERPRETATION / HYPOTHESIS của survey**, không thay thế lịch sử bằng một quyết định mới của chủ dự án. Không chọn backbone, modality hoặc đề tài cuối.
 
 ## 5. Câu hỏi mở quyết định bước tiếp theo
 
@@ -54,3 +57,5 @@ Trợ lý đề xuất khảo sát sâu trước hai thiết lập:
 ## 6. Thứ tự công việc đề xuất
 
 Xác minh nguồn → audit khả thi dữ liệu → định nghĩa endpoint/horizon → baseline nhỏ → đánh giá lợi ích lịch sử và state → quyết định thiết lập → mới xem xét kiến trúc. Đây là trình tự đề xuất; chưa ghi nhận thí nghiệm nào đã thực hiện.
+
+Đã hoàn thành đợt survey có giới hạn ở [landscape](surveys/VISUAL_WORLD_MODELS_LANDSCAPE.md), [medical survey](surveys/MEDICAL_WORLD_MODELS_SURVEY.md) và [adversarial gap analysis](surveys/TRANSFER_GAPS.md). **Chưa hoàn thành data-access/manifest audit, baseline headroom hoặc xác nhận novelty.** Các trường chưa rõ giữ UNKNOWN tại [DATASET_FEASIBILITY](DATASET_FEASIBILITY.md); phạm vi kiểm chứng nguồn ở [research log](surveys/RESEARCH_LOG.md).
