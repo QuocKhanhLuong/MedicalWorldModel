@@ -78,3 +78,12 @@ Cập nhật: **2026-09-12**.
 Đây là ưu tiên khảo sát do trợ lý đề xuất, **không phải quyết định chọn đề tài của chủ dự án**. B vẫn có thể được ưu tiên lại khi điều kiện dữ liệu và mục tiêu sử dụng rõ hơn.
 
 Đợt 2026-09-12 mở rộng thành Q1–Q8 ở [OPEN_QUESTIONS](OPEN_QUESTIONS.md), gồm cả B và các bệnh/cơ quan khác. Bảng cũ được giữ để bảo toàn lịch sử; không mặc định A1/C1 đã được chọn hoặc có ưu thế dữ liệu đã xác nhận.
+
+## Ràng buộc bổ sung sau audit methods đợt 2
+
+Đây là **INTERPRETATION / HYPOTHESIS**, chưa là lựa chọn đề tài. Nguồn kiểm tra: [A](surveys/deep_dives/FAMILY_A_FORECASTING_AUDIT.md), [B](surveys/deep_dives/FAMILY_B_ACQUISITION_AUDIT.md), [C](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md), [state/evaluation](surveys/deep_dives/STATE_AND_EVALUATION_AUDIT.md).
+
+- **A:** same-prefix PCA/linear/Kalman/GP, direct-target và recursive prediction phải được phân biệt; online adaptation chỉ nhận prefix. Giữ uncertainty gating là câu hỏi calibration/risk ranking, không claim component mới.
+- **B:** measured query pose là biến điều kiện được khai báo; không lén đưa future poses vào state. Memory phải được so khi coverage/pose/protocol tương đương. Stored frame count không xác định Δt sau loại invalid records. GenNBV là prior về policy/coverage evaluation, không tự cung cấp learned dynamics cho medical.
+- **C:** LUMIERE đã có aggregate depth count nhưng chưa usable label/interval intersection; CFB-GBM ba mốc không đáp ứng Q5 bốn visits. TaDiff external evidence chỉ MRI-generation metrics; không dùng làm validation của future tumor masks. Các kịch bản điều trị từ model vẫn bị giới hạn bởi observed-care/data assumptions.
+- **Cả ba:** chọn điểm đánh giá sau cutoff rõ ràng; kiểm tra value của history/state bằng strong simple baselines; proper score/coverage/sharpness phải phù hợp endpoint và forecast mode. Không suy clinical benefit từ image similarity.

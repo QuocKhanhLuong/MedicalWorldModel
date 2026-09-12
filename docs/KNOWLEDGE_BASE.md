@@ -96,3 +96,19 @@ Chưa có thực nghiệm nào xác nhận các giả thuyết của dự án. Q
 **VERIFIED:** [BrLP §5.6](https://arxiv.org/html/2502.08560) đã đo uncertainty–error association; [Petersen](https://arxiv.org/html/2106.12917) có oracle future-volume-conditioned selection metric. **INTERPRETATION:** distribution diversity, correlation với error, calibration và deployable selection utility phải chấm riêng.
 
 Hợp đồng dữ liệu, các rủi ro prefix preprocessing và map năng lực CV → cơ hội y khoa ở [medical survey](surveys/MEDICAL_WORLD_MODELS_SURVEY.md), [transfer gaps](surveys/TRANSFER_GAPS.md). Chưa có gap nào được xác nhận novel hoặc trở thành quyết định của chủ dự án.
+
+## 10. Nghiên cứu sâu đợt 2 — state sufficiency và uncertainty của trajectory
+
+**VERIFIED:** [Predictive Representations of State, NeurIPS 2001](https://proceedings.neurips.cc/paper/2001/hash/1e4d36177d71bbb3558e43af9577d70e-Abstract.html) đã định nghĩa state thông qua future tests và sufficiency; đây không phải ý tưởng mới của video foundation models. [WorldArena §3.4](https://arxiv.org/html/2602.08971v2) gộp video metrics thành EWMScore và chấm functional utility riêng. [Conformal surgical forecasting, MICCAI 2025](https://papers.miccai.org/miccai-2025/0168-Paper0260.html) đã chấm calibrated joint endpoint uncertainty; [CAFHT, ICML 2024](https://proceedings.mlr.press/v235/zhou24l.html) đã có simultaneous trajectory bands với giả định exchangeability ở cấp trajectory.
+
+**INTERPRETATION / HYPOTHESIS:** đánh giá state cần chỉ rõ đủ cho target/query nào; history-residual test có thể bác bỏ sufficiency trong phạm vi test, không chứng minh clinical-state identification. Tách uncertainty theo horizon, uncertainty của cả đường đi và uncertainty của event/decision. Phải ghi budget quan sát: nhận truth từng bước khác forecast toàn bộ từ prefix cố định. Bản [kiểm toán state/evaluation](surveys/deep_dives/STATE_AND_EVALUATION_AUDIT.md) đưa ra các phép bác bỏ, matched-information comparisons và giới hạn của metric proxies; tất cả là protocol đề xuất, chưa thực nghiệm.
+
+## 11. Đợt 2: temporal contract và bằng chứng dữ liệu cụ thể
+
+**VERIFIED.** [Audit A](surveys/deep_dives/FAMILY_A_FORECASTING_AUDIT.md) có prior art về manifold/PCA state, probabilistic deformation, online state-space learning và Gaussian-process gating; [audit B](surveys/deep_dives/FAMILY_B_ACQUISITION_AUDIT.md) có trackerless sequence memory, nonrigid reconstruction và protocol confounding; [audit C](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md) kiểm tra exact context/target, preprocessing, uncertainty và external evaluation. Không coi component tồn tại là bằng chứng đã giải mọi question, cũng không gọi component đó mới trong medical.
+
+**VERIFIED / derived audit.** Metadata LUMIERE được đếm từ ZIP directory, không đọc ảnh: 62 patients có ≥4 nominal weeks với đủ bốn sequence; [artifact](research_artifacts/2026-09-12_metadata_audit.json) ghi source version, hashes, counting rule và root recount. Số usable 2-past/2-future với label/horizon cụ thể vẫn UNKNOWN. Figshare CC0 và README non-commercial là conflict cần giải quyết khi dùng data, không tự phân xử license trong survey.
+
+**INTERPRETATION / HYPOTHESIS.** Phân biệt (i) fixed-prefix dự báo trực tiếp nhiều target times; (ii) transition recursive không nhận quan sát mới; (iii) prediction sau mỗi assimilation; (iv) reconstruction dùng toàn chuỗi. Cả (i) và (ii) có thể là phép kiểm tra world model; (ii) không bắt buộc. Chấm joint trajectory khi claim temporal coherence; patient-disjoint calibration khi claim uncertainty; independent geometry/clinical readout khi claim state vượt representation phục vụ một head.
+
+**Giới hạn thực tế:** mới có source/method/metadata audit; chưa baseline replication, pixel/label reliability audit, training hoặc clinical validation. Không chọn A/B/C.

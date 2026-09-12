@@ -1,0 +1,365 @@
+{
+  "audit_id": "mwm-round2-C-metadata-audit",
+  "audited_at": "2026-09-12",
+  "auditor_scope": "A source-page snapshots and C public metadata feasibility; aggregates only",
+  "privacy_and_access": {
+    "patient_images_downloaded": false,
+    "bulk_archive_downloaded": false,
+    "dua_accepted": false,
+    "lumiere_method": "HTTP range requests for ZIP tail/central directory and README metadata; no ZIP member containing image pixels was decompressed or read.",
+    "raw_patient_level_metadata_committed": false,
+    "temporary_metadata_contains_pseudonymous_paths": true
+  },
+  "sources": [
+    {
+      "source_id": "LUMIERE-FIGSHARE-IMAGING-V1",
+      "dataset": "LUMIERE",
+      "source_url": "https://api.figshare.com/v2/articles/21249516",
+      "doi": "10.6084/m9.figshare.21249516.v1",
+      "version": 1,
+      "published_date": "2022-12-13T15:26:43Z",
+      "is_public_at_audit": true,
+      "license_as_returned_by_api": "CC0",
+      "remote_file": {
+        "name": "Imaging-v202211.zip",
+        "file_id": 38249697,
+        "size_bytes": 32565467707,
+        "download_url": "https://ndownloader.figshare.com/files/38249697",
+        "remote_sha256": "UNKNOWN",
+        "remote_etag_observed": "fae532025d5d576c0da31423aa2fd189-31"
+      },
+      "local_metadata_artifact": {
+        "description": "10,000,000-byte ZIP tail obtained by HTTP range; contains EOCD/ZIP64 metadata but is not the full archive",
+        "byte_range": "32555467707-32565467706",
+        "sha256": "ebf8047f0866f185728f4fcb73c32585806cd41ae99faf5affffc18b21544ae6",
+        "note": "The HTTP range may contain trailing compressed bytes preceding the central directory. Only directory records were parsed; image members were not opened or decompressed."
+      },
+      "derived_counts": {
+        "patient_directories": 91,
+        "study_week_directories": 638,
+        "study_dirs_with_all_four_base_sequences": 599,
+        "patients_with_at_least_4_all_four_sequence_dirs": 66,
+        "patients_with_at_least_5_all_four_sequence_dirs": 53,
+        "patients_with_at_least_4_all_four_sequence_dirs_and_at_least_4_distinct_nominal_weeks": 62
+      },
+      "counting_rule": "Parse ZIP central-directory path names only. Count Patient-XXX directories and Patient-XXX/week-XXX study directories. A study directory is complete only if it contains all four base filenames CT1.nii.gz, T1.nii.gz, T2.nii.gz and FLAIR.nii.gz. For the conservative patient count, collapse suffixes such as week-000-1 and week-000-2 to one nominal week number, then require at least four distinct nominal weeks. No file contents or patient images were read.",
+      "primary_dataset_source": "https://www.nature.com/articles/s41597-022-01881-7",
+      "limitations": [
+        "Derived counts do not prove four clinically usable visits, two past plus two future visits, adequate horizon spacing, expert lesion-mask availability, treatment-timeline completeness, or prefix-safe preprocessing.",
+        "LUMIERE time is represented by anonymized relative week counts; actual calendar days are not asserted.",
+        "The remote whole-archive SHA256 was not computed because bulk image download was prohibited; only the local metadata artifact hash is supplied."
+      ]
+    },
+    {
+      "source_id": "LUMIERE-FIGSHARE-README-V1",
+      "dataset": "LUMIERE",
+      "source_url": "https://api.figshare.com/v2/articles/21266241",
+      "doi": "10.6084/m9.figshare.21266241.v1",
+      "version": 1,
+      "published_date": "2022-12-13T15:26:44Z",
+      "is_public_at_audit": true,
+      "license_as_returned_by_api": "CC0",
+      "remote_file": {
+        "name": "LUMIERE-readme.pdf",
+        "file_id": 37983597,
+        "size_bytes": 189228,
+        "download_url": "https://ndownloader.figshare.com/files/37983597",
+        "remote_sha256": "UNKNOWN"
+      },
+      "local_metadata_artifact": {
+        "description": "Downloaded README PDF only; no patient images",
+        "sha256": "e69427cce9e9c6ef0430389f3c65e2fa32d639d3fc392d69c6b0edf19108d52f"
+      },
+      "derived_counts": {},
+      "counting_rule": "No counts derived from PDF text; used only to verify public file layout, file names, metadata categories and access notes.",
+      "limitations": [
+        "API labels CC0 but README says non-commercial use; unresolved source conflict, no legal adjudication or DUA acceptance in this audit.",
+        "README access/use wording must be checked against the current institutional terms before any data use.",
+        "README does not establish patient-level mask quality or two-past/two-future usability."
+      ]
+    },
+    {
+      "source_id": "BREASTDCEDL-METADATA",
+      "dataset": "BreastDCEDL derived breast DCE release",
+      "source_url": "https://raw.githubusercontent.com/naomifridman/BreastDCEDL/ed4bfe7a3407b722bc32c01ba38aa3619cb73ab5/BreastDCEDL_metadata.csv",
+      "repository_url": "https://github.com/naomifridman/BreastDCEDL",
+      "repository_commit": "ed4bfe7a3407b722bc32c01ba38aa3619cb73ab5",
+      "version": "repository commit",
+      "commit_date": "2025-07-17T16:47:34Z",
+      "is_public_at_audit": true,
+      "local_artifact": {
+        "size_bytes": 332419,
+        "sha256": "f83f3987b055b6700ea47cd8c332fcf3057a86b98f9429acb2313e18b2dbf9a5"
+      },
+      "derived_counts": {
+        "metadata_rows": 2070,
+        "rows_by_dataset": {
+          "spy2": 982,
+          "spy1": 172,
+          "duke": 916
+        },
+        "spy2_n_times_distribution": {
+          "4": 1,
+          "5": 8,
+          "6": 181,
+          "7": 471,
+          "8": 280,
+          "9": 39,
+          "10": 1,
+          "11": 1
+        }
+      },
+      "counting_rule": "Parse CSV rows and group by dataset. Treat n_times as the field supplied by this derived DCE release, then report its distribution without reinterpreting it as treatment-visit depth. README/code inspection identifies these as within-exam contrast phases, so no longitudinal T0-T3 count is derived.",
+      "limitations": [
+        "The repository README and snapshot totals are not perfectly consistent (README describes approximately 2,072 while this CSV has 2,070 rows); keep release total/version as UNKNOWN until resolved.",
+        "n_times is intra-exam DCE phase count, not evidence of two past plus two future clinical visits.",
+        "This is a derived resource and does not by itself verify original I-SPY2 subject-level completeness, treatment timestamps or trial-grade FTV labels."
+      ]
+    },
+    {
+      "source_id": "CFB-GBM-PAPER",
+      "dataset": "CFB-GBM v2.0",
+      "source_url": "https://arxiv.org/html/2608.17884",
+      "official_collection_url": "https://www.cancerimagingarchive.net/collection/cfb-gbm",
+      "version": "arXiv v1 as read 2026-09-12",
+      "is_public_at_audit": "paper points to public TCIA collection; access snapshot not independently completed",
+      "derived_counts": {
+        "patients_with_4_visits": "UNKNOWN",
+        "patient_level_2_past_plus_2_future": "NOT_SUPPORTED_BY_DESIGN"
+      },
+      "counting_rule": "No manifest was downloaded. Use the paper's explicit t0, t1 and t2 timeline description only; do not infer a four-visit cohort from 264 patients or pair counts.",
+      "limitations": [
+        "Three named timepoints cannot satisfy a two-past plus two-future protocol for one patient.",
+        "No patient-level four-visit intersection was claimed or counted."
+      ]
+    },
+    {
+      "source_id": "ISPY2-ACRIN-PROTOCOL-DESCRIPTOR",
+      "dataset": "I-SPY2/ACRIN 6698 TCIA descriptor",
+      "source_url": "https://wiki.cancerimagingarchive.net/plugins/viewsource/viewpagesrc.action?pageId=70230072",
+      "data_dictionary_url": "https://wiki.cancerimagingarchive.net/download/attachments/50135447/ACRIN%206698%20ISPY2%20DWI%20and%20DCE%20MRI%20Data%20Descriptions_20210520.pdf?api=v2",
+      "version": "descriptor page/PDF as read 2026-09-12",
+      "is_public_at_audit": true,
+      "derived_counts": {
+        "protocol_timepoints": "up_to_4 (T0, T1, T2, T3)",
+        "patient_level_all_four_timepoints": "UNKNOWN",
+        "patient_level_2_past_plus_2_future": "UNKNOWN"
+      },
+      "counting_rule": "No clinical CSV or patient manifest was downloaded. Record only the protocol-level T0/T1/T2/T3 statement. Do not convert collection totals or within-exam DCE phases into all-four visit counts.",
+      "limitations": [
+        "The data dictionary says not all objects are present in all cases due to unanalyzable studies.",
+        "Timing fields are best effort from DICOM metadata; exact patient-level visit completeness and usable FTV intersection remain UNKNOWN."
+      ]
+    },
+    {
+      "source_id": "OASIS-FAQ",
+      "dataset": "OASIS longitudinal resources",
+      "source_url": "https://sites.wustl.edu/oasisbrains/home/oasis-resources-and-faq/",
+      "version": "official FAQ as read 2026-09-12",
+      "is_public_at_audit": "access mechanism/release snapshot not completed",
+      "derived_counts": {
+        "patient_level_4_visit_intersection": "UNKNOWN",
+        "patient_level_2_past_plus_2_future": "UNKNOWN"
+      },
+      "counting_rule": "No OASIS manifest or clinical table was downloaded. Record only that the official FAQ describes MR_d1234-style days-from-entry identifiers; do not infer depth from the resource name.",
+      "limitations": [
+        "No subject-level count, segmentation intersection, protocol continuity or permission snapshot was established in this audit."
+      ]
+    }
+  ],
+  "independent_recount": {
+    "role": "root integration; independent counting implementation on the same retrieved metadata, not an independent data acquisition",
+    "lumiere": {
+      "central_directory_records": 31370,
+      "central_sha256": "decdf38d6ee28b780a2a49ecf1b3e59fb073134c4e76a0f5b7364181589b1a7e",
+      "patient_dirs": 91,
+      "study_dirs": 638,
+      "complete_four_sequence_dirs": 599,
+      "patients_ge4_complete_dirs": 66,
+      "patients_ge5_complete_dirs": 53,
+      "patients_ge4_complete_distinct_weeks": 62,
+      "tail_sha256": "ebf8047f0866f185728f4fcb73c32585806cd41ae99faf5affffc18b21544ae6"
+    },
+    "breastdcedl": {
+      "rows": 2070,
+      "by_dataset": {
+        "spy2": 982,
+        "spy1": 172,
+        "duke": 916
+      },
+      "sha256": "f83f3987b055b6700ea47cd8c332fcf3057a86b98f9429acb2313e18b2dbf9a5"
+    }
+  },
+  "page_level_A_sources": {
+    "audited_at": "2026-09-12",
+    "scope": "Source-page/README transcription only; no per-patient image/header/manifest audit. Hash checks concern downloaded public source pages, not dataset contents.",
+    "counting_policy": [
+      "Use only explicit aggregate counts stated by the source; do not infer patient counts from video/frame totals.",
+      "Retain qualifiers such as 'over' and report conflicts between dataset-card prose, split tables, and update notes.",
+      "A current README on a moving branch is versioned as a dated snapshot plus SHA256; this is not a claim of immutable dataset content.",
+      "A label at ED/ES or sparse challenge frames is not counted as dense future labels.",
+      "No continuity, timestamp, treatment, pose, force, or action property is inferred unless the source explicitly states it."
+    ],
+    "records": [
+      {
+        "dataset": "TrackRAD2025",
+        "sources": [
+          {
+            "url": "https://huggingface.co/datasets/LMUK-RADONC-PHYS-RES/TrackRAD2025/raw/main/README.md",
+            "version": "main README.md snapshot retrieved 2026-09-12",
+            "sha256": "58bc169d7b887824cfe3da53b7f936ee8541a4efcf0308e2007b269b9b65b2db",
+            "local_snapshot_hash_verified_by_root": true
+          }
+        ],
+        "public_access_and_license": "HF dataset card states CC-BY-NC-4.0. Training release is public; README update says preliminary/final testing became downloadable in January 2026 except cohort D due privacy, while earlier prose says 58 labeled test cases are submission-only. Treat access as version/conflict requiring recheck.",
+        "aggregate_counts": {
+          "unlabeled_patients": 477,
+          "labeled_patients": 108,
+          "unlabeled_frames": ">2.8 million",
+          "labeled_frames": ">10,000",
+          "multiobserver_labeled_frames": ">8,000",
+          "training_unlabeled_cases": 477,
+          "training_labeled_cases": 50,
+          "preliminary_test_labeled_cases": 8,
+          "final_test_labeled_cases_in_table": 50,
+          "final_test_cohort_D_cases_in_table": 20
+        },
+        "temporal_and_label_metadata": {
+          "modality": "2D+t sagittal cine MRI; six international centers; 0.35 T and 1.5 T MRI-linacs",
+          "frame_rate_metadata": "Per-patient/per-scan frame-rate.json files are documented; aggregate cadence UNKNOWN",
+          "sequence_continuity": "UNKNOWN; README warns that 1.5 T scans may contain temporal jumps/contrast changes from treatment interruptions combined into one cine scan",
+          "labels": "Tracking target masks on selected labeled frames; exact dense future-label run length UNKNOWN",
+          "additional_scans": "README documents multiple scans for some unlabeled patients",
+          "actions_pose_force_treatment_timestamps": "UNKNOWN; radiotherapy acquisition context is described but event timestamps, device pose, force and commanded actions are not provided in the reviewed aggregate card"
+        },
+        "counting_rule": "Direct transcription of explicit prose and training/preliminary/final tables in the README; no HF file enumeration and no patient data download.",
+        "evidence_status": "VERIFIED counts/metadata from official card; UNKNOWN continuity and forecasting sufficiency; INTERPRETATION that a manifest is required before multi-step forecasting."
+      },
+      {
+        "dataset": "EchoNet-Dynamic",
+        "sources": [
+          {
+            "url": "https://echonet.github.io/dynamic/",
+            "version": "official project page snapshot retrieved 2026-09-12",
+            "sha256": "233eb1b6013a897557ea4583f20823ba3cf811bce184c1e21840a35c6661a965",
+            "local_snapshot_hash_verified_by_root": true
+          },
+          {
+            "url": "https://aimi.stanford.edu/datasets/echonet-dynamic-cardiac-ultrasound",
+            "version": "Stanford AIMI record snapshot retrieved 2026-09-12",
+            "sha256": "4155eb0cd660a59ec7d180c49e3764105da575ca2c9fc8b50f6cee3af2ee20dd",
+            "local_snapshot_hash_verified_by_root": true
+          }
+        ],
+        "public_access_and_license": "Official project page provides download registration under a Research Use Agreement: personal/non-commercial research, no redistribution, no clinical diagnosis/care. Code repository is separate and does not change the data terms.",
+        "aggregate_counts": {
+          "videos": 10030,
+          "unique_individuals": "source describes videos from individuals; exact de-duplicated patient count beyond 10,030 UNKNOWN",
+          "video_resolution": "112x112 after preprocessing",
+          "clinical_measurements": "EF, ESV and EDV per study",
+          "expert_tracings": "LV endocardial tracings at end-systole and end-diastole for each video"
+        },
+        "temporal_and_label_metadata": {
+          "cadence_and_timestamps": "UNKNOWN from reviewed public pages",
+          "longitudinal_visits": "UNKNOWN; source page describes routine-care studies and does not establish repeated visits for forecasting",
+          "dense_frame_labels": "UNKNOWN; official page explicitly documents tracings at two time points, not expert masks on every frame",
+          "probe_pose_force_treatment": "UNKNOWN"
+        },
+        "counting_rule": "Use the official page's explicit 10,030 video count and label description; do not reinterpret two ED/ES tracings as dense trajectories.",
+        "evidence_status": "VERIFIED public count, access agreement and sparse-label description; UNKNOWN cadence/continuity/longitudinal/action metadata."
+      },
+      {
+        "dataset": "ACDC",
+        "sources": [
+          {
+            "url": "https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html",
+            "version": "official database page snapshot retrieved 2026-09-12",
+            "sha256": "260b84ff38e247098c21063d100eab15939bc7c100da8ffc2b668df9fbc6931e",
+            "local_snapshot_hash_verified_by_root": true
+          }
+        ],
+        "public_access_and_license": "Official page states data and ground truth remain publicly available; exact license text not found in reviewed HTML.",
+        "aggregate_counts": {
+          "exams": 150,
+          "patients": 150,
+          "pathology_groups": 5,
+          "patients_per_group": 30,
+          "images_per_exam": "28–40",
+          "scanners": "1.5 T and 3.0 T"
+        },
+        "temporal_and_label_metadata": {
+          "acquisition": "short-axis SSFP cine MRI, breath hold, retrospective or prospective gating",
+          "cycle_coverage": "complete or partial cardiac cycle; prospective gating may omit 5–10% of cycle end",
+          "timestamps": "diastolic/systolic phase instants provided; exact per-frame timestamps/cadence UNKNOWN",
+          "labels": "ground truth publicly available; reviewed page does not establish dense expert segmentation for every frame",
+          "repeated_natural_cycles": "UNKNOWN",
+          "actions_pose_force_treatment": "UNKNOWN"
+        },
+        "counting_rule": "Direct transcription of the official ACDC database page; image count is per exam range, not a patient/sequence estimate.",
+        "evidence_status": "VERIFIED aggregate exam/patient/acquisition metadata; UNKNOWN dense future-label and continuous multi-beat feasibility."
+      },
+      {
+        "dataset": "Public respiratory signal database used by Wimmert et al.",
+        "sources": [
+          {
+            "url": "https://raw.githubusercontent.com/IPMI-ICNS-UKE/respiratory-signal-database/main/README.md",
+            "version": "main README.md snapshot retrieved 2026-09-12",
+            "sha256": "112706d0df8be52a00dc0ea579cd9cf97c70ca211312d183969f084f1914a30c",
+            "local_snapshot_hash_verified_by_root": true
+          }
+        ],
+        "public_access_and_license": "Official README states open access of retrospectively collected anonymized signals was approved by local ethics board; repository license is MIT. Data are external respiratory signals, not images.",
+        "aggregate_counts": {
+          "current_signals": 2510,
+          "current_patients": 419,
+          "total_acquisition_seconds": ">325000",
+          "study_analysis_signals_after_corruption_filter": 2502,
+          "study_analysis_patients_after_corruption_filter": 416,
+          "removed_signals": 8,
+          "removed_patients": 3,
+          "train_signals_patients": "1262 / 215",
+          "validation_signals_patients": "514 / 84",
+          "test_signals_patients": "726 / 117",
+          "sampling_rate": "25 Hz"
+        },
+        "temporal_and_label_metadata": {
+          "modality": "Varian RPM external marker signal acquired during 4DCT, 4DCBCT and dose delivery",
+          "continuity": "continuous scalar signal segments as provided; image/anatomy continuity UNKNOWN",
+          "actions_pose_force_treatment": "no commanded action or probe pose; treatment context described, intervention effect not identified",
+          "patient_split": "README states split at patient level"
+        },
+        "counting_rule": "Report both current README inventory (2510/419) and Wimmert study inventory (2502/416) because README explicitly documents removal of eight corrupted signals from three patients.",
+        "evidence_status": "VERIFIED public counts, patient split, 25 Hz and license; INTERPRETATION that this is a strong scalar baseline resource but not a visual anatomical state dataset."
+      },
+      {
+        "dataset": "Pohl ETH/OvGU cine-MRI examples",
+        "sources": [
+          {
+            "url": "https://raw.githubusercontent.com/pohl-michel/2D-MR-image-prediction/main/README.md",
+            "version": "main README.md snapshot retrieved 2026-09-12",
+            "sha256": "96fb0f5544004c4c1bdd480be33d93589850871b31f5c0b3e8cb1c527f771ec7",
+            "local_snapshot_hash_verified_by_root": true
+          }
+        ],
+        "public_access_and_license": "Official repository provides code and links to ETH 4D-MRI lung data and OvGU liver 2D-MR navigator frames; repository code is BSD-3-Clause. Data license/access terms are dataset-specific and not inferred from code license.",
+        "aggregate_counts": {
+          "repository_examples": "preprocessed cine-MR examples and pipeline documented",
+          "paper_ETH_sequences": 4,
+          "paper_OvGU_sequences": 8,
+          "paper_total_sequences": 12,
+          "paper_ETH_frames_per_sequence": 200,
+          "paper_OvGU_frames_per_sequence_after_discard": 498
+        },
+        "temporal_and_label_metadata": {
+          "ETH": "approximately 3.18 Hz and 63 s per sequence in paper",
+          "OvGU": "approximately 6 Hz and 83 s per sequence in paper",
+          "continuous_sequences": "paper treats sequences as short cine runs; exact release manifest and licensing UNKNOWN",
+          "dense_future_labels": "not provided as clinical contours in reviewed repository metadata",
+          "actions_pose_force_treatment": "UNKNOWN"
+        },
+        "counting_rule": "Sequence/frame counts are from the published Pohl paper; repository snapshot is used only to verify code/data links and license wording. No repository data files were downloaded.",
+        "evidence_status": "VERIFIED repository links/license and paper-reported sequence counts; UNKNOWN broader public population/generalization and data-use terms."
+      }
+    ]
+  }
+}

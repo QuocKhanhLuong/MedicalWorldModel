@@ -12,7 +12,7 @@ Nguồn khởi tạo: yêu cầu định hình paper Medical World Model và yê
 | Loại dự án | Nghiên cứu một paper Medical World Model |
 | Nền tảng của người nghiên cứu | AI/Computer Vision |
 | Giai đoạn | Làm rõ bản chất và lựa chọn thiết lập nghiên cứu trước kiến trúc |
-| Hồ sơ nghiên cứu mới | Survey nguồn sơ cấp ngày 2026-09-12: 55 paper, 13 hồ sơ data release, 8 câu hỏi ứng viên; chưa chạy thí nghiệm hoặc audit patient-level data |
+| Hồ sơ nghiên cứu mới | Hai đợt nghiên cứu 2026-09-12: 90 paper, 13 hồ sơ chính, 8 câu hỏi; thêm 4 deep-audit dossiers và aggregate metadata recount. Chưa đọc ảnh/nhãn bệnh nhân hoặc chạy mô hình |
 | Câu hỏi trung tâm | Dự đoán trạng thái tiếp theo của cái gì, từ thông tin nào, chuyển tiếp như thế nào, phục vụ mục tiêu gì? |
 | Quan hệ với paper dataset | Dự án dataset riêng đã chọn siêu âm; paper world model không bắt buộc dùng siêu âm hoặc dùng chung dữ liệu |
 | Quy ước lưu trữ | Khi source of truth hoặc knowledge base có thay đổi có ý nghĩa, chủ động viết/cập nhật docs và đẩy vào repo trong lượt làm việc tương ứng |
@@ -58,4 +58,12 @@ Ngày 2026-09-12, nghiên cứu nguồn mở rộng thành [8 câu hỏi và ran
 
 Xác minh nguồn → audit khả thi dữ liệu → định nghĩa endpoint/horizon → baseline nhỏ → đánh giá lợi ích lịch sử và state → quyết định thiết lập → mới xem xét kiến trúc. Đây là trình tự đề xuất; chưa ghi nhận thí nghiệm nào đã thực hiện.
 
-Đã hoàn thành đợt survey có giới hạn ở [landscape](surveys/VISUAL_WORLD_MODELS_LANDSCAPE.md), [medical survey](surveys/MEDICAL_WORLD_MODELS_SURVEY.md) và [adversarial gap analysis](surveys/TRANSFER_GAPS.md). **Chưa hoàn thành data-access/manifest audit, baseline headroom hoặc xác nhận novelty.** Các trường chưa rõ giữ UNKNOWN tại [DATASET_FEASIBILITY](DATASET_FEASIBILITY.md); phạm vi kiểm chứng nguồn ở [research log](surveys/RESEARCH_LOG.md).
+Đã hoàn thành đợt survey có giới hạn ở [landscape](surveys/VISUAL_WORLD_MODELS_LANDSCAPE.md), [medical survey](surveys/MEDICAL_WORLD_MODELS_SURVEY.md) và [adversarial gap analysis](surveys/TRANSFER_GAPS.md). **Đã có metadata-only recount giới hạn cho LUMIERE/BreastDCEDL; chưa hoàn thành usable trajectory/label/time/access audit, baseline headroom hoặc xác nhận novelty.** Các trường chưa rõ giữ UNKNOWN tại [DATASET_FEASIBILITY](DATASET_FEASIBILITY.md); phạm vi kiểm chứng nguồn ở [research log](surveys/RESEARCH_LOG.md).
+
+## 7. Trạng thái sau yêu cầu tiếp tục nghiên cứu sâu — 2026-09-12
+
+**Thực tế đã thực hiện:** mở rộng prior art và đọc methods/evaluation ở [bốn deep dossiers](surveys/RESEARCH_LOG.md#đợt-2--audit-methods-temporal-contract-và-metadata); kiểm tra lại DOI/publication status và các giới hạn forecast/simulation/planning. [Metadata audit](research_artifacts/2026-09-12_metadata_audit.json) lưu aggregate count, URL/version/checksum; không lưu patient-level records hoặc ảnh trong repo.
+
+**Thực tế chưa thực hiện:** chưa chạy baseline/mô hình, audit nội dung ảnh/contour, xác lập usable cohort, chấp nhận DUA, thực nghiệm clinical hoặc xác nhận novelty. Metadata availability không được đổi thành “dự án đã có dữ liệu”.
+
+**Quyết định giữ nguyên:** cả A/B/C chưa chọn; modality/data/backbone chưa chọn. Các phép kiểm tra state/calibration và ranking sửa trong OPEN_QUESTIONS là tổng hợp/đề xuất nghiên cứu, không phải quyết định của chủ dự án.

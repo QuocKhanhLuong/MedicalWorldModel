@@ -2,6 +2,23 @@
 
 Ngày theo múi giờ **Asia/Bangkok**. Chỉ ghi thay đổi có ý nghĩa. Lịch sử commit là dấu vết phiên bản; nhật ký này giải thích nội dung và hệ quả, không thay thế bằng chứng khoa học.
 
+
+## 2026-09-12 — Đợt 2: audit state, temporal evaluation và public metadata
+
+**Loại:** tiếp tục deep research theo yêu cầu chủ dự án; source verification và phản chứng novelty. Không chọn A/B/C hoặc backbone.
+
+**Thay đổi:** thêm bốn [deep-audit dossiers](surveys/RESEARCH_LOG.md#đợt-2--audit-methods-temporal-contract-và-metadata); mở rộng 55→90 paper records (một hàng/paper, 36 trường), đọc sâu methods/evaluation, giữ 13 hồ sơ data chính và 8 câu hỏi. Bổ sung PSR/state-value tests, functional CV benchmarks, conformal/proper-score prior art; tăng strong baselines và falsifiers theo từng họ.
+
+**Bằng chứng dữ liệu mới:** aggregate ZIP-directory audit LUMIERE tái lập 62 patients có ≥4 nominal weeks khác nhau với đủ bốn MRI sequences; không phải 62 usable 2+2 trajectories. BreastDCEDL CSV có 2,070 rows; `n_times` là intravisit contrast phases. Lưu [metadata provenance](research_artifacts/2026-09-12_metadata_audit.json), không raw patient data/paths. Không mở image members, không chấp nhận DUA.
+
+**Đính chính/giới hạn được làm rõ:** TUS-REC policy link xác minh CC BY-NC-SA 4.0; không cộng archive-part descriptions thành số subjects. LUMIERE CC0 API khác README non-commercial; giữ conflict. Root sửa draft TaDiff external thành image-only evaluation; GenNBV thành policy-in-simulator thay learned imagined transition; Gunnarsson tách prefix assimilation/forecast suffix khỏi ACDC interpolation. Canonical/publication metadata và author/version differences được ghi trong REFERENCES.
+
+**Integrity:** 6 DOI checks cho sources CV/metrics và 24 cho A/B, có overlap với corpus cũ; ba rate-limit errors retry thành công. Internal links/anchors, 90×36 CSV, duplicate IDs/DOIs/arXiv, title/author cross-file consistency và diff whitespace được kiểm tra; [final aggregate](research_artifacts/2026-09-12_integrity.json). Skill log/phạm vi đọc/source conflicts ở [RESEARCH_LOG](surveys/RESEARCH_LOG.md).
+
+**Hệ quả:** giảm novelty plausibility Q4/Q5; điều chỉnh data feasibility theo observed metadata, không thay bằng chứng ảnh/nhãn. Broad claims thiếu geometric state/memory/uncertainty/continuous-time/patient-specific medical dynamics bị prior art bác bỏ. Phần còn lại là hypothesis về incremental state value, trustworthy multi-future evaluation và calibrated risk trong contract cụ thể.
+
+**Còn mở:** usable label/time/pose intersections, terms cho intended use, independent target reliability, baseline headroom và downstream horizon. Chưa có model/clinical experiment, data approval hoặc topic selection. Bước kế tiếp là data/endpoint audit và simple-baseline falsification, chưa architecture design.
+
 ## 2026-09-12 — Nghiên cứu lineage, frontier và khả năng chuyển giao sang y khoa
 
 **Loại:** nghiên cứu nguồn, cập nhật knowledge base, kiểm tra prior art và feasibility; không lựa chọn kiến trúc/đề tài.

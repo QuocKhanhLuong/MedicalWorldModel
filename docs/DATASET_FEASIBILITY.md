@@ -1,6 +1,6 @@
 # Dataset feasibility — A/B/C
 
-Đối chiếu **2026-09-12**. **Chưa tải/audit dữ liệu ảnh hoặc manifest cấp bệnh nhân; chưa xác nhận quyền truy cập của nhóm đối với dataset cần phê duyệt.** “Public” ở đây gồm open download và research access theo điều kiện, không đồng nghĩa unrestricted. Không nhập dữ liệu của dự án ultrasound riêng vào dự án này.
+Đối chiếu **2026-09-12**. **Chưa tải/đọc dữ liệu ảnh; đã audit metadata công khai giới hạn cho LUMIERE và BreastDCEDL, chưa xác nhận quyền truy cập của nhóm đối với dataset cần phê duyệt.** “Public” ở đây gồm open download và research access theo điều kiện, không đồng nghĩa unrestricted. Không nhập dữ liệu của dự án ultrasound riêng vào dự án này.
 
 **VERIFIED**: thông tin trực tiếp từ data card, nhà cung cấp hoặc paper dataset được liên kết. **UNKNOWN**: chưa xác minh; không ước lượng hoặc điền từ dataset tương tự. **INTERPRETATION / HYPOTHESIS**: suitability và nguy cơ leakage cần audit. Mọi số đếm giữ đúng đơn vị và phiên bản; “images”, “series”, “studies”, “sessions”, “visits”, “patients” không hoán đổi.
 
@@ -34,7 +34,7 @@
 | Patients/sequences | Card: 477 unlabeled patients, khoảng 2.8 million frames; 108 labeled patients, khoảng 10,000 annotated frames. “Khoảng” là cách nguồn báo cáo, không phải ước lượng của survey |
 | Split/version | 50 labeled training; 58 pretest/test. Update January 2026 nói test đã mở trừ cohort D do privacy; card còn đoạn cũ nói test withheld. Số labeled patients thực tải hiện tại: UNKNOWN |
 | Temporal resolution/timestamps | Có per-scan frame-rate.json; cadence toàn bộ cohort và absolute timestamps: UNKNOWN |
-| Depth/continuity | Real-time sagittal cine MRI từ MRI-linac; số sequences/subject, gaps/cuts và độ dài hợp lệ: UNKNOWN |
+| Depth/continuity | Real-time sagittal cine MRI từ MRI-linac. Card mô tả temporal jumps/contrast changes do ghép treatment interruptions ở 1.5 T; labeled frames tránh jumps. Số sequences/subject và valid-run lengths: UNKNOWN |
 | Labels | Target masks ở các frame được annotate; thêm multi-observer annotations. Không xác minh dense labels ở mọi horizon |
 | Action/pose/treatment | Command/pose/force: UNKNOWN, không có căn cứ coi được cung cấp. RT context có; individual treatment-event timeline: UNKNOWN |
 
@@ -99,11 +99,11 @@
 
 | Thuộc tính | Đối chiếu |
 | --- | --- |
-| Accessibility/license | Train/validation trên Zenodo; research/noncommercial/citation conditions theo challenge policies. Exact CC license nếu có: UNKNOWN. Test access hiện tại: UNKNOWN |
+| Accessibility/license | Train/validation trên Zenodo; **CC BY-NC-SA 4.0** và research/noncommercial/citation conditions theo policy 2024 (đã mở license link). Test access hiện tại: UNKNOWN |
 | Subjects/sequences | Data page: **85 healthy volunteers, 2,040 scans**, 24 scans/person; split 50/3/32 subjects = 1,200/72/768 scans |
-| Conflict | Home page có mô tả 100 volunteers; dùng data-page cohort cụ thể, không trộn version |
+| Conflict / packaging | Home page có mô tả 100 volunteers; data page 85. Zenodo Part 1/2 cùng mô tả total train 50 folders/1,200 scans; không cộng thành disjoint subjects. Per-part unique counts UNKNOWN |
 | Temporal resolution | 20 fps, 480×640 frames; synchronized optical tracking |
-| Timestamps/depth | Temporal order trong sweep; absolute clock, jitter/dropouts và scan-duration distribution: UNKNOWN |
+| Timestamps/depth | Paper mô tả synchronized acquisition và loại invalid transforms; schema public mô tả frames/tforms. Actual timestamp fields sau lọc, jitter/dropouts và scan-duration distribution: UNKNOWN |
 | Labels/pose | Forearm sweeps; calibrated 4×4 pose transforms, pixel-to-mm calibration; NDI Polaris Vicra tracked displacement |
 | Action/contact/treatment | Command logs, force/contact measurements, treatment records: UNKNOWN; không có căn cứ coi measured trajectory là commanded action |
 | Continuity | Recorded sweeps; giữa sweep có reset/reposition, không nối thành một trajectory liên tục |
@@ -118,11 +118,11 @@
 
 | Thuộc tính | Đối chiếu |
 | --- | --- |
-| Accessibility/license | Figshare open data; MRI item **CC0**. Paper CC BY không thay thế data license |
+| Accessibility/license | Figshare API/MRI item ghi **CC0**, nhưng README ghi **non-commercial use**. Đây là conflict giữa nguồn cùng release chưa phân xử; không kết luận unrestricted. Paper CC BY không thay thế data terms |
 | Patients/visits | **91 GBM patients; 638 study dates; 2,487 MRI images**. 599 studies có đủ bốn modalities |
 | Modalities/labels | T1 pre/postcontrast, T2, FLAIR; automated DeepBraTumIA/HD-GLIO outputs cho complete studies; expert RANO evaluations không phải expert voxel labels |
-| Resolution/timestamps | Paper §Anonymization: relative weeks từ preoperative acquisition; dates được làm mờ theo tuần, same-week studies có suffix giữ thứ tự. Exact days không được cung cấp; timestamp/interval parsing cấp file chưa audit |
-| Depth/continuity | Longitudinal follow-up; số patients có ≥2 past + ≥2 future visits: UNKNOWN. Discrete visits, không liên tục |
+| Resolution/timestamps | Paper §Anonymization: relative weeks từ preoperative acquisition; dates được làm mờ theo tuần, same-week studies có suffix giữ thứ tự. Exact days không được cung cấp; đã parse nominal week từ đường dẫn ZIP, chưa audit clinical timestamp/interval |
+| Depth/continuity | Derived directory audit: 66 patients có ≥4 study dirs đủ bốn chuỗi; **62** có ≥4 nominal weeks khác nhau sau gộp suffix. Số patients có ≥2 past + ≥2 future **usable** cho horizon/label cụ thể vẫn UNKNOWN. Discrete visits |
 | Clinical/treatment | Clinical/outcome và một số molecular data được mô tả; granular dose/start/stop/change history, completeness: UNKNOWN |
 | Action/pose | Không xác minh acquisition actions/pose |
 
@@ -208,7 +208,7 @@
 | Accessibility/license | TCIA, CC BY 4.0; collection v1 2022-05-02 |
 | Subjects/studies | **985 subjects = 719 I-SPY2 + 266 ACRIN-6698; 3,677 studies**. Không cộng 719 một lần nữa |
 | Sequences/depth | Serial breast DCE, DWI trong ACRIN subset; complete per-patient landmark counts: UNKNOWN |
-| Time/timestamps | Visit/series metadata; exact actual-day mapping và elapsed intervals: UNKNOWN trước dictionary/manifest audit |
+| Time/timestamps | Dictionary đã đọc: protocol tối đa T0/T1/T2/T3; timing từ DICOM là best effort. Actual-day mapping, interval và patient-level intersection: UNKNOWN trước manifest audit |
 | Labels | FTV-related segmentation/analysis objects; clinical spreadsheet cho 985 subjects có treatment/molecular/follow-up information |
 | Treatment | Có treatment fields; arm, timing, dose, missingness, assignment probabilities cần xác minh cho từng estimand |
 | Continuity/action/pose | Discrete treatment visits; DCE phases là intravisit. Device action/pose: UNKNOWN |
@@ -248,6 +248,18 @@
 | Continuity/action/treatment | Sparse sampled contrast phases, không liên tục như natural video; pose/actions và treatment-event completeness UNKNOWN |
 
 **INTERPRETATION / HYPOTHESIS.** Có thể audit contrast kinetics như MRI-CEK; không dùng làm bằng chứng có long-term lesion trajectories. Continuous interpolated output phải chấm ở acquired times và với baseline constant/linear kinetic curve, không chỉ adjacent-frame smoothness.
+
+
+## Bổ sung metadata đợt 2 — nguồn, phép đếm và giới hạn
+
+**VERIFIED / derived audit.** [LUMIERE archive API](https://api.figshare.com/v2/articles/21249516), [README API](https://api.figshare.com/v2/articles/21266241) và [README PDF](https://ndownloader.figshare.com/files/37983597) được kiểm tra trực tiếp. ZIP central-directory có 91 patient dirs, 638 study dirs, 599 dirs đủ `CT1/T1/T2/FLAIR`; phép đếm độc lập trong bước tích hợp tái lập 66/53 patients có ≥4/≥5 dirs và 62 có ≥4 nominal weeks khác nhau. Chỉ parse directory records; không mở/giải nén image members. HTTP range có thể chứa vài byte nén trước directory, nên không coi đây là full-image download hoặc header/label audit. [Artifact aggregate, URL/version/checksum/quy tắc](research_artifacts/2026-09-12_metadata_audit.json) không chứa patient-level paths/records. Chi tiết và các điều kiện chưa đạt nằm ở [C audit §4](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md#data-audit).
+
+**VERIFIED.** [BreastDCEDL README](https://github.com/naomifridman/BreastDCEDL) mô tả `n_times` là contrast phases trong một exam. CSV tại commit `ed4bfe7a3407b722bc32c01ba38aa3619cb73ab5` có **2,070 rows**, gồm 982 `spy2`, 172 `spy1`, 916 `duke`; root tái lập count và SHA256. README và CSV có total khác nhau; giữ phiên bản riêng. Đây là kiểm tra nguồn derived, không thêm một cohort longitudinal độc lập: `n_times≥4` không chứng minh bốn lần khám điều trị. Access/license của ảnh derived, subject de-duplication, exact phase timestamps, labels/treatment intersection ngoài metadata đã đọc: **UNKNOWN**.
+
+**VERIFIED / nguồn adjacent A.** [Wimmert respiratory-signal database](https://github.com/IPMI-ICNS-UKE/respiratory-signal-database) và [prediction repository](https://github.com/IPMI-ICNS-UKE/respiratory-motion-prediction) cung cấp benchmark scalar breathing: README 2,510 signals/419 patients; phân tích loại 8 corrupted signals/3 patients còn 2,502/416, preprocessing 25 Hz. Đây là nguồn kiểm tra baseline/time protocol, **không phải visual anatomy dataset**; pose/action, image labels và treatment-effect targets không được xác minh. MIT repository license được ghi riêng, không suy quyền của mọi linked data object. [A audit](surveys/deep_dives/FAMILY_A_FORECASTING_AUDIT.md#respiratory-signals) nêu split và giới hạn. Không tăng số 13 hồ sơ chính bằng cách đếm lại nguồn derived/adjacent.
+
+**INTERPRETATION / HYPOTHESIS.** Metadata làm Q5 có căn cứ điều tra rõ hơn, nhưng không nâng thành cohort sẵn huấn luyện. Gate còn lại: label reliability, interval windows, prefix-safe preprocessing và patient-disjoint split. Với A/B, page-level schema cũng không thay header/calibration/dropout audit của release thực tải.
+
 
 ## Những nguồn không được coi là đang có dữ liệu — VERIFIED và giới hạn
 

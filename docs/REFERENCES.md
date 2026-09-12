@@ -1,6 +1,6 @@
 # Sổ nguồn tham khảo và xác minh
 
-Cập nhật **2026-09-12** (Asia/Bangkok). **55 paper + 13 hồ sơ data release** trong survey. Mỗi paper có một ID thống nhất với [PAPER_MATRIX](PAPER_MATRIX.md) và [CSV](paper_matrix.csv). Dataset không được cộng thành paper hoặc trajectories nếu không đúng đơn vị.
+Cập nhật **2026-09-12** (Asia/Bangkok). **90 paper + 13 hồ sơ data release** trong survey. Mỗi paper có một ID thống nhất với [PAPER_MATRIX](PAPER_MATRIX.md) và [CSV](paper_matrix.csv). Dataset không được cộng thành paper hoặc trajectories nếu không đúng đơn vị.
 
 ## Lịch sử và mức bằng chứng
 
@@ -202,19 +202,19 @@ Bryan Lim. **2018; NeurIPS31; Published.** [Nguồn canonical/primary](https://p
 
 Haojun Jiang; Zhenguo Sun; Ning Jia; Meng Li; Yu Sun; Shaqi Luo; Shiji Song; Gao Huang. **2024; MICCAI; LNCS15001:190–199; Published.** [Nguồn canonical/primary](https://papers.miccai.org/miccai-2024/118-Paper0053.html); [DOI 10.1007/978-3-031-72378-0_18](https://doi.org/10.1007/978-3-031-72378-0_18); [arXiv 2406.13165](https://arxiv.org/abs/2406.13165). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** official abstract, paper information and author response; Abstract; author response items1,2,7; code/data N/A. Hỗ trợ nghiên cứu probe guidance. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M01](PAPER_MATRIX.md#m01).
+**VERIFIED trong phạm vi đọc:** canonical MICCAI PDF §2–3 methods/evaluation (round2); Abstract; author response items1,2,7; code/data N/A; Round2: PDF §§2.1-2.2, 3.1-3.4, Table 1; MICCAI page. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M01](PAPER_MATRIX.md#m01). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M02 — EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance
 
-Yang Yue; Yulin Wang; Haojun Jiang; Pan Liu; Shiji Song; Gao Huang. **2025; CVPR; Published.** [Nguồn canonical/primary](https://openaccess.thecvf.com/content/CVPR2025/html/Yue_EchoWorld_Learning_Motion-Aware_World_Models_for_Echocardiography_Probe_Guidance_CVPR_2025_paper.html); DOI UNKNOWN; [arXiv 2504.13065v1](https://arxiv.org/abs/2504.13065v1). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
+Yang Yue; Yulin Wang; Haojun Jiang; Pan Liu; Shiji Song; Gao Huang. **2025; CVPR; Published.** [Nguồn canonical/primary](https://openaccess.thecvf.com/content/CVPR2025/html/Yue_EchoWorld_Learning_Motion-Aware_World_Models_for_Echocardiography_Probe_Guidance_CVPR_2025_paper.html); [DOI 10.1109/CVPR52734.2025.02421](https://doi.org/10.1109/CVPR52734.2025.02421); [arXiv 2504.13065v1](https://arxiv.org/abs/2504.13065v1). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** full-text §3–5 and appendix; PDF visual inspection p4; §4.1–4.2; sequential protocol; Appendix dataset. Hỗ trợ nghiên cứu probe guidance. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M02](PAPER_MATRIX.md#m02).
+**VERIFIED trong phạm vi đọc:** full-text §3–5 and appendix; PDF visual inspection p4; §4.1–4.2; sequential protocol; Appendix dataset; Round2: arXiv §§4.1-5.1, Appendix A-B; CVPR PDF Tables 1-2. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M02](PAPER_MATRIX.md#m02). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M03 — Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound
 
 Siqi Fan; Mingcong Chen; Ran Liu; Zixuan Yang; Xiaoyu Fu; Xiaoqing Gao; Yunhui Liu; Hongbin Liu. **2026; arXiv; peer-reviewed venue UNKNOWN; Preprint.** [Nguồn canonical/primary](https://arxiv.org/abs/2607.21918v2); DOI UNKNOWN; [arXiv 2607.21918v2](https://arxiv.org/abs/2607.21918v2). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** full-text §II–IV; Fig4; TableI; TableIV; Discussion. Hỗ trợ nghiên cứu train goal-guidance policy. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M03](PAPER_MATRIX.md#m03).
+**VERIFIED trong phạm vi đọc:** full-text §II–IV; Fig4; TableI; TableIV; Discussion; Round2: arXiv v2 §§II-A to II-C, III-A to III-D, IV, Tables I-III. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M03](PAPER_MATRIX.md#m03). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M04 — Medical World Model
 
@@ -226,31 +226,31 @@ Yijun Yang; Zhao-Yang Wang; Qiuping Liu; Shuwen Sun; Kang Wang; Rama Chellappa; 
 
 Chen Liu; Ke Xu; Liangbo L. Shen; Guillaume Huguet; Zilong Wang; Alexander Tong; Danilo Bzdok; Jay Stewart; Jay C. Wang; Lucian V. Del Priore; Smita Krishnaswamy. **2025; ICASSP; Published.** [Nguồn canonical/primary](https://doi.org/10.1109/ICASSP49660.2025.10890535); [DOI 10.1109/ICASSP49660.2025.10890535](https://doi.org/10.1109/ICASSP49660.2025.10890535); [arXiv 2406.14794v6](https://arxiv.org/abs/2406.14794v6). Đối chiếu 2026-09-12. Canonical ICASSP 2025 short version; methods dùng extended arXiv v6. DOI/title/authors corroborated by Duke institutional record and official repository; publisher resolver access error. Crossref DOI metadata matched 2026-09-12.
 
-**VERIFIED trong phạm vi đọc:** full-text methods/evaluation/Appendix D,F; §5.5–5.6; AppendixD.1/D.3. Hỗ trợ nghiên cứu image-level forecast. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M05](PAPER_MATRIX.md#m05).
+**VERIFIED trong phạm vi đọc:** full-text methods/evaluation/Appendix D,F; §5.5–5.6; AppendixD.1/D.3; Đợt 2: arXiv HTML preprocessing, datasets, evaluation and test-time optimization sections. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M05](PAPER_MATRIX.md#m05). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M06 — Treatment-Aware Diffusion Probabilistic Model for Longitudinal MRI Generation and Diffuse Glioma Growth Prediction
 
 Qinghui Liu; Elies Fuster-Garcia; Ivar Thokle Hovden; Bradley J. MacIntosh; Edvard O. S. Grødem; Petter Brandal; Carles Lopez-Mateu; Donatas Sederevičius; Karoline Skogen; Till Schellhorn; Atle Bjørnerud; Kyrre Eeg Emblem. **2025; IEEE Transactions on Medical Imaging 44(6):2449–2462; Published.** [Nguồn canonical/primary](https://doi.org/10.1109/TMI.2025.3533038); [DOI 10.1109/TMI.2025.3533038](https://doi.org/10.1109/TMI.2025.3533038); [arXiv 2309.05406v5](https://arxiv.org/abs/2309.05406v5). Đối chiếu 2026-09-12. Canonical TMI 2025; arXiv v5 dùng cho methods. DOI metadata corroborated by UPV institutional record and PubMed 40031286; publisher resolver access error. Crossref DOI metadata matched 2026-09-12.
 
-**VERIFIED trong phạm vi đọc:** full-text methods; §IV-A/B evaluation; §IV-A 18/5 patient split; external labels; training sampling. Hỗ trợ nghiên cứu forecast under treatment context. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M06](PAPER_MATRIX.md#m06).
+**VERIFIED trong phạm vi đọc:** full-text methods; §IV-A/B evaluation; §IV-A 18/5 patient split; external labels; training sampling; Đợt 2: arXiv HTML methods, local/external evaluation and treatment-day analysis; root re-read arXiv v5 §IV-A and §IV-C2. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M06](PAPER_MATRIX.md#m06). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M07 — Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation
 
 Hao Chen; Rui Yin; Yifan Chen; Qi Chen; Chao Li. **2026; ICLR; Published.** [Nguồn canonical/primary](https://openreview.net/pdf/a1558b2e7d9494789fdd3057059dfbe2add8737e.pdf); DOI UNKNOWN; [arXiv 2512.09185v4](https://arxiv.org/abs/2512.09185v4). Đối chiếu 2026-09-12. v4 2026-06-17; ICLR publication verified in camera-ready header
 
-**VERIFIED trong phạm vi đọc:** camera-ready metadata; full arXiv methods/evaluation; §3; §4.1; regional-change experiments. Hỗ trợ nghiên cứu individual future imaging. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M07](PAPER_MATRIX.md#m07).
+**VERIFIED trong phạm vi đọc:** camera-ready metadata; full arXiv methods/evaluation; §3; §4.1; regional-change experiments; Đợt 2: arXiv HTML methods/evaluation; OpenReview camera-ready metadata. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M07](PAPER_MATRIX.md#m07). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M08 — Brain Latent Progression: Individual-based spatiotemporal disease progression on 3D Brain MRIs via latent diffusion
 
 Lemuel Puglisi; Daniel C. Alexander; Daniele Ravì. **2025; Medical Image Analysis 106:103734; Published.** [Nguồn canonical/primary](https://doi.org/10.1016/j.media.2025.103734); [DOI 10.1016/j.media.2025.103734](https://doi.org/10.1016/j.media.2025.103734); [arXiv 2502.08560v2](https://arxiv.org/abs/2502.08560v2). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh; Canonical author metadata lists Puglisi, Alexander, Ravì; ADNI/AIBL study-group acknowledgement is not expanded as additional named authors.
 
-**VERIFIED trong phạm vi đọc:** full-text methods §4; evaluation §5.6; §4.3–4.6; §5.5–5.7. Hỗ trợ nghiên cứu personalized image forecast. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M08](PAPER_MATRIX.md#m08).
+**VERIFIED trong phạm vi đọc:** full-text methods §4; evaluation §5.6; §4.3–4.6; §5.5–5.7; Đợt 2: arXiv HTML methods, uncertainty evaluation and fast-progressor analysis. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M08](PAPER_MATRIX.md#m08). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M09 — Frame forecasting in cine MRI using the PCA respiratory motion model: comparing recurrent neural networks trained online and transformers
 
 Michel Pohl; Mitsuru Uesaka; Hiroyuki Takahashi; Kazuyuki Demachi; Ritu Bhusal Chhatkuli. **2026; Computerized Medical Imaging and Graphics 131:102755; Published.** [Nguồn canonical/primary](https://www.sciencedirect.com/science/article/abs/pii/S0895611126000583); [DOI 10.1016/j.compmedimag.2026.102755](https://doi.org/10.1016/j.compmedimag.2026.102755); [arXiv 2410.05882v3](https://arxiv.org/abs/2410.05882v3). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** PDF methods/evaluation; visually inspected Table2; §2.2–2.4; Table2; §2.3.3. Hỗ trợ nghiên cứu latency compensation. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M09](PAPER_MATRIX.md#m09).
+**VERIFIED trong phạm vi đọc:** PDF methods/evaluation; visually inspected Table2; §2.2–2.4; Table2; §2.3.3; Round2 A audit §§2.2–2.3.3/Table2: prefix PCA/direct horizons. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M09](PAPER_MATRIX.md#m09). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M10 — A Latent ODE Approach to Spatiotemporal Modeling of Cine Cardiac MRI
 
@@ -298,31 +298,31 @@ Lukas Zbinden; Nigel Nelson; Juo-Tung Chen; Xinhao Chen; Ji Woong Kim; Mahdi Azi
 
 Jens Petersen; Fabian Isensee; Gregor Köhler; Paul F. Jäger; David Zimmerer; Ulf Neuberger; Wolfgang Wick; Jürgen Debus; Sabine Heiland; Martin Bendszus; Philipp Vollmuth; Klaus H. Maier-Hein. **2021; MICCAI; LNCS12903:83–92; Published.** [Nguồn canonical/primary](https://doi.org/10.1007/978-3-030-87199-4_8); [DOI 10.1007/978-3-030-87199-4_8](https://doi.org/10.1007/978-3-030-87199-4_8); [arXiv 2106.12917v2](https://arxiv.org/abs/2106.12917v2). Đối chiếu 2026-09-12. Canonical MICCAI 2021; full methods read in arXiv 2106.12917v2; publisher book metadata corroborated by DKFZ institutional repository.
 
-**VERIFIED trong phạm vi đọc:** full-text methods/evaluation; §2.1–2.2; Query Volume Dice. Hỗ trợ nghiên cứu plausible spatial growth trajectories. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M17](PAPER_MATRIX.md#m17).
+**VERIFIED trong phạm vi đọc:** full-text methods/evaluation; §2.1–2.2; Query Volume Dice; Đợt 2: arXiv HTML abstract, methods and evaluation; Query Volume Dice. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M17](PAPER_MATRIX.md#m17). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M18 — Learning Spatio-Temporal Model of Disease Progression With NeuralODEs From Longitudinal Volumetric Data
 
 Dmitrii Lachinov; Arunava Chakravarty; Christoph Grechenig; Ursula Schmidt-Erfurth; Hrvoje Bogunović. **2024; IEEE TMI 43(3):1165–1179; Published; online 2023, issue 2024.** [Nguồn canonical/primary](https://doi.org/10.1109/TMI.2023.3330576); [DOI 10.1109/TMI.2023.3330576](https://doi.org/10.1109/TMI.2023.3330576); [arXiv 2211.04234](https://arxiv.org/abs/2211.04234). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** full-text §II and evaluation design; §II initial value problem; temporal Dice; TADPOLE evaluation. Hỗ trợ nghiên cứu anatomical progression prediction. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M18](PAPER_MATRIX.md#m18).
+**VERIFIED trong phạm vi đọc:** full-text §II and evaluation design; §II initial value problem; temporal Dice; TADPOLE evaluation; Đợt 2: arXiv full text methods and evaluation; published DOI. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M18](PAPER_MATRIX.md#m18). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M19 — Probabilistic Temporal Prediction of Continuous Disease Trajectories and Treatment Effects Using Neural SDEs
 
 Joshua Durso-Finley; Berardino Barile; Jean-Pierre Falet; Douglas L. Arnold; Nick Pawlowski; Tal Arbel. **2024; MICCAI; LNCS15003:400–410; Published.** [Nguồn canonical/primary](https://papers.miccai.org/miccai-2024/619-Paper3431.html); [DOI 10.1007/978-3-031-72384-1_38](https://doi.org/10.1007/978-3-031-72384-1_38); [arXiv 2406.12807v1](https://arxiv.org/abs/2406.12807v1). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** full-text §2–3; §2.2 potential outcomes/RCT independence; §3 trials. Hỗ trợ nghiên cứu personalized progression/treatment analysis. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M19](PAPER_MATRIX.md#m19).
+**VERIFIED trong phạm vi đọc:** full-text §2–3; §2.2 potential outcomes/RCT independence; §3 trials; Đợt 2: MICCAI official paper page and arXiv §§2–3. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M19](PAPER_MATRIX.md#m19). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M20 — Predictive digital twins with quantified uncertainty for patient-specific decision making in oncology
 
 Graham Pash; Umberto Villa; David A. Hormuth II; Thomas E. Yankeelov; Karen Willcox. **2026; Journal of Computational Physics 560:114937; Published 2026-09-01.** [Nguồn canonical/primary](https://www.sciencedirect.com/science/article/pii/S0021999126002901); [DOI 10.1016/j.jcp.2026.114937](https://doi.org/10.1016/j.jcp.2026.114937); [arXiv 2505.08927](https://arxiv.org/abs/2505.08927). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** full-text §3–5; §4.3; §5.1–5.3; AppendixC. Hỗ trợ nghiên cứu forecast and experimental-design analysis. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M20](PAPER_MATRIX.md#m20).
+**VERIFIED trong phạm vi đọc:** full-text §3–5; §4.3; §5.1–5.3; AppendixC; Đợt 2: arXiv HTML §§3–5 and Appendix C; published DOI metadata. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M20](PAPER_MATRIX.md#m20). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M21 — Online prediction for respiratory movement compensation: a patient-specific gating control for MRI-guided radiotherapy
 
 Yang Li; Zhenjiang Li; Jian Zhu; Baosheng Li; Huazhong Shu; Di Ge. **2023; Radiation Oncology 18:149; Published.** [Nguồn canonical/primary](https://doi.org/10.1186/s13014-023-02341-1); [DOI 10.1186/s13014-023-02341-1](https://doi.org/10.1186/s13014-023-02341-1); arXiv UNKNOWN. Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** original paper PDF abstract/method overview; https://d-nb.info/1318665426/34; Methods. Hỗ trợ nghiên cứu latency-aware gating. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M21](PAPER_MATRIX.md#m21).
+**VERIFIED trong phạm vi đọc:** full PMC methods/evaluation (round2); https://d-nb.info/1318665426/34; Methods; A audit: linear prediction, crossing/gating error and prediction timing. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M21](PAPER_MATRIX.md#m21). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M22 — Real-time prediction and gating of respiratory motion using an extended Kalman filter and Gaussian process regression
 
@@ -334,7 +334,7 @@ W. Bukhari; S.-M. Hong. **2015; Physics in Medicine & Biology 60(1):233–252; P
 
 Yipeng Hu; Eli Gibson; Li-Lin Lee; Weidi Xie; Dean C. Barratt; Tom Vercauteren; J. Alison Noble. **2017; RAMBO at MICCAI; Accepted/published chapter DOI recorded.** [Nguồn canonical/primary](https://arxiv.org/abs/1707.05392); [DOI 10.1007/978-3-319-67564-0_11](https://doi.org/10.1007/978-3-319-67564-0_11); [arXiv 1707.05392v1](https://arxiv.org/abs/1707.05392v1). Đối chiếu 2026-09-12. arXiv version UNKNOWN nếu không ghi vN; canonical là bản công bố khi đã xác minh
 
-**VERIFIED trong phạm vi đọc:** metadata + abstract; Trang nguồn/abstract. Hỗ trợ nghiên cứu procedure simulation. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M23](PAPER_MATRIX.md#m23).
+**VERIFIED trong phạm vi đọc:** author PDF §2.1–2.3 and §3 methods/evaluation (round2); Trang nguồn/abstract; Round2: PDF §§2.1-2.3, 3-4; UCL record. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M23](PAPER_MATRIX.md#m23). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ### M24 — A technical assessment of latent diffusion for Alzheimer's disease progression
 
@@ -358,7 +358,7 @@ Harry Robertshaw; Han-Ru Wu; Alejandro Granados; Thomas C. Booth. **2025; MICCAI
 
 Casey E. Stowers; Chengyue Wu; Zhan Xu; Sidharth Kumar; Clinton Yam; Jong Bum Son; Jingfei Ma; Jonathan I. Tamir; Gaiane M. Rauch; Thomas E. Yankeelov. **2025; Radiology: Artificial Intelligence 7(1):e240124; Published; online 2024, issue 2025.** [Nguồn canonical/primary](https://pubs.rsna.org/doi/10.1148/ryai.240124); [DOI 10.1148/ryai.240124](https://doi.org/10.1148/ryai.240124); arXiv UNKNOWN. Đối chiếu 2026-09-12. RSNA PDF ghi issue 2025, copyright/online 2024
 
-**VERIFIED trong phạm vi đọc:** original PDF methods/evaluation pp2–5; Mathematical Model; CNN Inputs and Outputs; Patient Demographics; pCR subset. Hỗ trợ nghiên cứu anticipate observed-regimen response. Không mở rộng ra utility/causality ngoài evaluation ghi ở [hồ sơ M27](PAPER_MATRIX.md#m27).
+**VERIFIED trong phạm vi đọc:** original PDF methods/evaluation pp2–5; Mathematical Model; CNN Inputs and Outputs; Patient Demographics; pCR subset; Đợt 2: RSNA primary HTML abstract, key points and Materials and Methods patient data. Hỗ trợ mô tả observation/state/transition/evaluation trong [hồ sơ M27](PAPER_MATRIX.md#m27). Các limitation/relevance là INTERPRETATION / HYPOTHESIS, không mở causal/clinical claim.
 
 ## Nguồn dữ liệu và tài liệu gốc
 
@@ -382,4 +382,228 @@ Mọi license/count/time/label dưới đây chỉ sử dụng ở phạm vi ghi
 
 ## Kiểm tra integrity và giới hạn
 
-Xem [RESEARCH_LOG](surveys/RESEARCH_LOG.md) cho DOI checks, corrected metadata, access errors, phương pháp skill và adversarial prior-art results. Không sử dụng survey thứ cấp làm bằng chứng duy nhất cho claim quan trọng; secondary indexes dùng discovery/corroboration, còn methods từ paper gốc. Nguồn chưa đọc methods không được dùng để khẳng định chi tiết methods ngoài abstract đã thấy. Dataset manifests, code execution, patient-level replication và clinical validation chưa được thực hiện.
+Xem [RESEARCH_LOG](surveys/RESEARCH_LOG.md) cho DOI checks, corrected metadata, access errors, phương pháp skill và adversarial prior-art results. Không sử dụng survey thứ cấp làm bằng chứng duy nhất cho claim quan trọng; secondary indexes dùng discovery/corroboration, còn methods từ paper gốc. Nguồn chưa đọc methods không được dùng để khẳng định chi tiết methods ngoài abstract đã thấy. Đợt 2 đã có aggregate metadata audit cho LUMIERE/BreastDCEDL; chưa đọc ảnh, chưa code/model replication hoặc clinical validation.
+
+## Bổ sung đợt 2 — state, benchmark và uncertainty
+
+Đối chiếu 2026-09-12; methods audit tại [STATE_AND_EVALUATION_AUDIT](surveys/deep_dives/STATE_AND_EVALUATION_AUDIT.md). Benchmark/methodology papers không được coi là mô hình sinh học; các trường không áp dụng ghi N/A.
+
+### G27 — Predictive Representations of State
+
+Michael L. Littman; Richard S. Sutton; Satinder Singh. **2001; NeurIPS 14; Published.** [Nguồn canonical/primary](https://proceedings.neurips.cc/paper/2001/hash/1e4d36177d71bbb3558e43af9577d70e-Abstract.html); DOI UNKNOWN; arXiv UNKNOWN. Đối chiếu 2026-09-12. conference year 2001; proceedings volume 14; no invented DOI
+
+**VERIFIED trong phạm vi đọc:** full original PDF §1–3, Theorem 1; §1 Eq1–3; Theorem1; conclusion. Phạm vi prediction/evaluation tại [hồ sơ G27](PAPER_MATRIX.md#g27); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### G28 — WorldSimBench: Towards Video Generation Models as World Simulators
+
+Yiran Qin; Zhelun Shi; Jiwen Yu; Xijun Wang; Enshen Zhou; Lijun Li; Zhenfei Yin; Xihui Liu; Lu Sheng; Jing Shao; Lei Bai; Ruimao Zhang. **2025; ICML; PMLR 267:50338–50362; Published.** [Nguồn canonical/primary](https://proceedings.mlr.press/v267/qin25f.html); DOI UNKNOWN; [arXiv 2410.18072](https://arxiv.org/abs/2410.18072). Đối chiếu 2026-09-12. arXiv first posted 2024; proceedings canonical 2025; author list differs (arXiv includes Wanli Ouyang)
+
+**VERIFIED trong phạm vi đọc:** canonical proceedings PDF methods/evaluation, rendered page; §3.2; Fig3; §4.1; pp6–7. Phạm vi prediction/evaluation tại [hồ sơ G28](PAPER_MATRIX.md#g28); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### G29 — WorldModelBench: Judging Video Generation Models As World Models
+
+Dacheng Li; Yunhao Fang; Yukang Chen; Shuo Yang; Shiyi Cao; Justin Wong; Michael Luo; Xiaolong Wang; Hongxu Yin; Joseph E. Gonzalez; Ion Stoica; Song Han; Yao Lu. **2025; NeurIPS 38, Datasets and Benchmarks Track; Published.** [Nguồn canonical/primary](https://proceedings.neurips.cc/paper_files/paper/2025/hash/4ec03ed08a3fcb59e1c815b5598beff1-Abstract-Datasets_and_Benchmarks_Track.html); [DOI 10.52202/085713-1834](https://doi.org/10.52202/085713-1834); [arXiv 2502.20694](https://arxiv.org/abs/2502.20694). Đối chiếu 2026-09-12. canonical published abstract differs from initial arXiv performance wording; no numbers mixed
+
+**VERIFIED trong phạm vi đọc:** canonical NeurIPS PDF §3–4 plus arXiv full HTML; §3.1 grading; §3.2 curation; §3.3 judge; §4. Phạm vi prediction/evaluation tại [hồ sơ G29](PAPER_MATRIX.md#g29); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### G30 — WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models
+
+Yu Shang; Zhuohang Li; Yiding Ma; Weikang Su; Xin Jin; Ziyou Wang; Lei Jin; Xin Zhang; Yinzhou Tang; Haisheng Su; Chen Gao; Wei Wu; Xihui Liu; Dhruv Shah; Zhaoxiang Zhang; Zhibo Chen; Jun Zhu; Yonghong Tian; Tat-Seng Chua; Wenwu Zhu; Yong Li. **2026; arXiv; peer-reviewed venue UNKNOWN; Preprint verified.** [Nguồn canonical/primary](https://arxiv.org/abs/2602.08971v2); DOI UNKNOWN; [arXiv 2602.08971v2](https://arxiv.org/abs/2602.08971v2). Đối chiếu 2026-09-12. v2 adds authors relative to indexed v1; challenge affiliation is not main-conference publication
+
+**VERIFIED trong phạm vi đọc:** full HTML §3–4 and Appendix A/B; §3.2–3.4; Appendix A.11–A.17/B. Phạm vi prediction/evaluation tại [hồ sơ G30](PAPER_MATRIX.md#g30); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### G31 — WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform
+
+Yu Shang; Yinzhou Tang; Yiding Ma; Zhuohang Li; Lei Jin; Weikang Su; Xin Jin; Zhaolu Wang; Ziyou Wang; Xin Zhang; Haisheng Su; Weizhen He; Wei Wu; Haoyi Duan; Gordon Wetzstein; Xihui Liu; Dhruv Shah; Zhaoxiang Zhang; Zhibo Chen; Jun Zhu; Yonghong Tian; Tat-Seng Chua; Wenwu Zhu; Chen Gao; Yong Li. **2026; arXiv; peer-reviewed venue UNKNOWN; Preprint verified.** [Nguồn canonical/primary](https://arxiv.org/abs/2605.17912v1); DOI UNKNOWN; [arXiv 2605.17912v1](https://arxiv.org/abs/2605.17912v1). Đối chiếu 2026-09-12. v1 May 2026; live leaderboard has later scoring updates; paper audit is version-specific
+
+**VERIFIED trong phạm vi đọc:** full HTML §3–4 and Tables1–3; §3.2 UniVTAC; §3.3 RL; §4.1–4.3. Phạm vi prediction/evaluation tại [hồ sơ G31](PAPER_MATRIX.md#g31); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### G32 — Do Generative Video Models Understand Physical Principles?
+
+Saman Motamed; Laura Culp; Kevin Swersky; Priyank Jaini; Robert Geirhos. **2026; WACV:948–958; Published.** [Nguồn canonical/primary](https://openaccess.thecvf.com/content/WACV2026/html/Motamed_Do_Generative_Video_Models_Understand_Physical_Principles_WACV_2026_paper.html); DOI UNKNOWN; [arXiv 2501.09038v3](https://arxiv.org/abs/2501.09038v3). Đối chiếu 2026-09-12. arXiv v3 February 2025; WACV 2026 canonical publication
+
+**VERIFIED trong phạm vi đọc:** canonical CVF PDF §2.2–2.5, §4; rendered protocol figure; Fig2; §2.5; discussion of metric limitations. Phạm vi prediction/evaluation tại [hồ sơ G32](PAPER_MATRIX.md#g32); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### K03 — Strictly Proper Scoring Rules, Prediction, and Estimation
+
+Tilmann Gneiting; Adrian E. Raftery. **2007; Journal of the American Statistical Association 102(477):359–378; Published.** [Nguồn canonical/primary](https://doi.org/10.1198/016214506000001437); [DOI 10.1198/016214506000001437](https://doi.org/10.1198/016214506000001437); arXiv UNKNOWN. Đối chiếu 2026-09-12. canonical JASA 2007, author-hosted original PDF
+
+**VERIFIED trong phạm vi đọc:** author PDF §4.2–4.3, §6; CRPS §4.2; energy score Eq22 and moment conditions; interval scores §6. Phạm vi prediction/evaluation tại [hồ sơ K03](PAPER_MATRIX.md#k03); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### K04 — Variogram-Based Proper Scoring Rules for Probabilistic Forecasts of Multivariate Quantities
+
+Michael Scheuerer; Thomas M. Hamill. **2015; Monthly Weather Review 143(4):1321–1334; Published.** [Nguồn canonical/primary](https://doi.org/10.1175/MWR-D-14-00269.1); [DOI 10.1175/MWR-D-14-00269.1](https://doi.org/10.1175/MWR-D-14-00269.1); arXiv UNKNOWN. Đối chiếu 2026-09-12. title footnote asterisk omitted; DOI confirmed, issue April 2015
+
+**VERIFIED trong phạm vi đọc:** original NOAA PDF §2–3, §5; §2 propriety/limitations; §3 correlation experiments; §5. Phạm vi prediction/evaluation tại [hồ sơ K04](PAPER_MATRIX.md#k04); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### K05 — Conformalized Adaptive Forecasting of Heterogeneous Trajectories
+
+Yanfei Zhou; Lars Lindemann; Matteo Sesia. **2024; ICML; PMLR 235:62002–62056; Published.** [Nguồn canonical/primary](https://proceedings.mlr.press/v235/zhou24l.html); DOI UNKNOWN; [arXiv 2402.09623](https://arxiv.org/abs/2402.09623). Đối chiếu 2026-09-12. ICML 2024 canonical; arXiv tracked separately
+
+**VERIFIED trong phạm vi đọc:** canonical PDF §2–3, Theorem1, Appendix A6; §2.1 observation timing; §2.2 marginal limitation; Theorem1; A6. Phạm vi prediction/evaluation tại [hồ sơ K05](PAPER_MATRIX.md#k05); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### K06 — Metrics reloaded: recommendations for image analysis validation
+
+Lena Maier-Hein; Annika Reinke; Patrick Godau; Minu D. Tizabi; Florian Buettner; Evangelia Christodoulou; Ben Glocker; Fabian Isensee; Jens Kleesiek; Michal Kozubek; Mauricio Reyes; Michael A. Riegler; Manuel Wiesenfarth; A. Emre Kavur; Carole H. Sudre; Michael Baumgartner; Matthias Eisenmann; Doreen Heckmann-Nötzel; Tim Rädsch; Laura Acion; Michela Antonelli; Tal Arbel; Spyridon Bakas; Arriel Benis; Matthew B. Blaschko; M. Jorge Cardoso; Veronika Cheplygina; Beth A. Cimini; Gary S. Collins; Keyvan Farahani; Luciana Ferrer; Adrian Galdran; Bram van Ginneken; Robert Haase; Daniel A. Hashimoto; Michael M. Hoffman; Merel Huisman; Pierre Jannin; Charles E. Kahn; Dagmar Kainmueller; Bernhard Kainz; Alexandros Karargyris; Alan Karthikesalingam; Florian Kofler; Annette Kopp-Schneider; Anna Kreshuk; Tahsin Kurc; Bennett A. Landman; Geert Litjens; Amin Madani; Klaus Maier-Hein; Anne L. Martel; Peter Mattson; Erik Meijering; Bjoern Menze; Karel G. M. Moons; Henning Müller; Brennan Nichyporuk; Felix Nickel; Jens Petersen; Nasir Rajpoot; Nicola Rieke; Julio Saez-Rodriguez; Clara I. Sánchez; Shravya Shetty; Maarten van Smeden; Ronald M. Summers; Abdel A. Taha; Aleksei Tiulpin; Sotirios A. Tsaftaris; Ben Van Calster; Gaël Varoquaux; Paul F. Jäger. **2024; Nature Methods 21:195–212; Published.** [Nguồn canonical/primary](https://doi.org/10.1038/s41592-023-02151-z); [DOI 10.1038/s41592-023-02151-z](https://doi.org/10.1038/s41592-023-02151-z); arXiv UNKNOWN. Đối chiếu 2026-09-12. Perspective, published 12 February 2024
+
+**VERIFIED trong phạm vi đọc:** original author-hosted PDF pp195–197; primary Nature metadata; Fig1–3, problem fingerprint and categorical-target scope. Phạm vi prediction/evaluation tại [hồ sơ K06](PAPER_MATRIX.md#k06); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### M28 — Conformal Forecasting for Surgical Instrument Trajectory
+
+Sara Sangalli; Gary Sarwin; Ertunc Erdil; Carlo Serra; Alessandro Carretta; Victor Staartjes; Ender Konukoglu. **2025; MICCAI 2025; LNCS 15968:117–127; Published.** [Nguồn canonical/primary](https://papers.miccai.org/miccai-2025/0168-Paper0260.html); [DOI 10.1007/978-3-032-05114-1_12](https://doi.org/10.1007/978-3-032-05114-1_12); [arXiv 2503.04191v2](https://arxiv.org/abs/2503.04191v2). Đối chiếu 2026-09-12. published author order differs from arXiv; MICCAI page curator Kitty K. Wong is not a paper author
+
+**VERIFIED trong phạm vi đọc:** canonical MICCAI PDF §2–4/Table1; arXiv compared; §2.1 endpoint target; §2.2 assumptions; §3 split/context; Table1. Phạm vi prediction/evaluation tại [hồ sơ M28](PAPER_MATRIX.md#m28); không suy clinical utility/causality ngoài bằng chứng đó.
+
+### M29 — Recalibration of Aleatoric and Epistemic Regression Uncertainty in Medical Imaging
+
+Max-Heinrich Laves; Sontje Ihler; Jacob F. Fast; Lüder A. Kahrs; Tobias Ortmaier. **2021; Machine Learning for Biomedical Imaging 1, MIDL 2020 special issue:1–26; Published.** [Nguồn canonical/primary](https://www.melba-journal.org/papers/2021:008.html); [DOI 10.59275/j.melba.2021-a6fd](https://doi.org/10.59275/j.melba.2021-a6fd); [arXiv 2104.12376](https://arxiv.org/abs/2104.12376). Đối chiếu 2026-09-12. journal 2021; title typography 'EpistemicRegression' normalized with space
+
+**VERIFIED trong phạm vi đọc:** original journal full HTML §2–4; §2 uncertainty/recalibration; §4.1 intervals; §4.2 rejection. Phạm vi prediction/evaluation tại [hồ sơ M29](PAPER_MATRIX.md#m29); không suy clinical utility/causality ngoài bằng chứng đó.
+
+## Bổ sung đợt 2 — prior art A/B và active-acquisition boundary
+
+### M30 — Online Learning in Motion Modeling for Intra-interventional Image Sequences
+
+Niklas Gunnarsson; Jens Sjölund; Peter Kimstrand; Thomas B. Schön. **2024; MICCAI 2024; Lecture Notes in Computer Science, pp. 706–716; Published.** [Nguồn canonical/primary](https://papers.miccai.org/miccai-2024/paper/1838_paper.pdf); [DOI 10.1007/978-3-031-72069-7_66](https://doi.org/10.1007/978-3-031-72069-7_66); [arXiv 2410.11491](https://arxiv.org/abs/2410.11491). Đối chiếu 2026-09-12. arXiv:2410.11491; published MICCAI 2024 version canonical; Crossref DOI checked
+
+**VERIFIED trong phạm vi đọc:** full MICCAI proceedings PDF, methods and evaluation; MICCAI 2024 paper §§2–4; Tables 1–2. Crossref metadata + official MICCAI proceedings PDF; author order/title/pages checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M30](PAPER_MATRIX.md#m30); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M31 — Prediction of high-dimensional states subject to respiratory motion: a manifold learning approach
+
+Wenyang Liu; Amit Sawant; Dan Ruan. **2016; Physics in Medicine and Biology 61(13):4989–4999; Published.** [Nguồn canonical/primary](https://pmc.ncbi.nlm.nih.gov/articles/PMC4975535/); [DOI 10.1088/0031-9155/61/13/4989](https://doi.org/10.1088/0031-9155/61/13/4989); arXiv UNKNOWN. Đối chiếu 2026-09-12. Publisher article and PMC record; no arXiv version identified
+
+**VERIFIED trong phạm vi đọc:** full PMC/BioC article, methods and evaluation; PMC4975535; methods, experiments and tables. Crossref DOI + PMC full text; title/authors/year/volume/pages checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M31](PAPER_MATRIX.md#m31); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M32 — Predicting real-time 3D deformation field maps (DFM) based on volumetric cine MRI (VC-MRI) and artificial neural networks for on-board 4D target tracking: a feasibility study
+
+Jonathan Pham; Wendy Harris; Wenzheng Sun; Zi Yang; Fang-Fang Yin; Lei Ren. **2019; Physics in Medicine and Biology 64(16):165016; Published.** [Nguồn canonical/primary](https://pmc.ncbi.nlm.nih.gov/articles/PMC6734921/); [DOI 10.1088/1361-6560/ab359a](https://doi.org/10.1088/1361-6560/ab359a); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published journal version; PMC full text canonical for audit
+
+**VERIFIED trong phạm vi đọc:** full PMC article, methods and evaluation; PMC6734921; methods, data and results sections. Crossref DOI + PMC full text; title/authors/year/volume/article number checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M32](PAPER_MATRIX.md#m32); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M33 — Prediction of in-plane organ deformation during free-breathing radiotherapy via discriminative spatial transformer networks
+
+Liset Vázquez Romaguera; Rosalie Plantefève; Francisco Perdigón Romero; François Hébert; Jean-François Carrier; Samuel Kadoury. **2020; Medical Image Analysis 64:101754; Published.** [Nguồn canonical/primary](https://pubmed.ncbi.nlm.nih.gov/32580056/); [DOI 10.1016/j.media.2020.101754](https://doi.org/10.1016/j.media.2020.101754); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published Medical Image Analysis version canonical; DOI checked
+
+**VERIFIED trong phạm vi đọc:** PubMed abstract and Crossref metadata; methods details bounded; PubMed 32580056 abstract. Crossref DOI + PubMed record; title/authors/year/article number checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M33](PAPER_MATRIX.md#m33); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M34 — Probabilistic 4D predictive model from in-room surrogates using conditional generative networks for image-guided radiotherapy
+
+Liset Vázquez Romaguera; Tal Mezheritsky; Rihab Mansour; Jean-François Carrier; Samuel Kadoury. **2021; Medical Image Analysis 74:102250; Published.** [Nguồn canonical/primary](https://pubmed.ncbi.nlm.nih.gov/34601453/); [DOI 10.1016/j.media.2021.102250](https://doi.org/10.1016/j.media.2021.102250); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published Medical Image Analysis version canonical; DOI checked
+
+**VERIFIED trong phạm vi đọc:** PubMed abstract and Crossref metadata; methods detail bounded; PubMed 34601453 abstract. Crossref DOI + PubMed record; title/authors/year/article number checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M34](PAPER_MATRIX.md#m34); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M35 — Predicting 4D liver MRI for MR-guided interventions
+
+Gino Gulamhussene; Anneke Meyer; Marko Rak; Oleksii Bashkanov; Jazan Omari; Maciej Pech; Christian Hansen. **2022; Computerized Medical Imaging and Graphics 101:102122; Published.** [Nguồn canonical/primary](https://doi.org/10.1016/j.compmedimag.2022.102122); [DOI 10.1016/j.compmedimag.2022.102122](https://doi.org/10.1016/j.compmedimag.2022.102122); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published 2022 volume 101 article 102122; Crossref title/authors checked
+
+**VERIFIED trong phạm vi đọc:** Crossref/publisher metadata; adjacent-paper scope only; Crossref record and DOI landing metadata. Crossref DOI record checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M35](PAPER_MATRIX.md#m35); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M36 — Respiratory motion prediction using deep convolutional long short-term memory network
+
+Shahabedin Nabavi; Monireh Abdoos; Mohsen Ebrahimi Moghaddam; Mohammad Mohammadi. **2020; Journal of Medical Signals & Sensors 10(2):69–75; Published.** [Nguồn canonical/primary](https://pmc.ncbi.nlm.nih.gov/articles/PMC7359959/); [DOI 10.4103/jmss.JMSS_38_19](https://doi.org/10.4103/jmss.JMSS_38_19); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published 2020; DOI capitalization normalized
+
+**VERIFIED trong phạm vi đọc:** PMC full text/metadata; methods and evaluation details bounded; PMC7359959; methods, experiments and results. Crossref DOI + PMC record; title/authors/year/volume/pages checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M36](PAPER_MATRIX.md#m36); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M37 — Benchmarking machine learning-based real-time respiratory signal predictors in 4D SBRT
+
+Lukas Wimmert; Maximilian Nielsen; Frederic Madesta; Tobias Gauer; Christian Hofmann; Rene Werner. **2024; Medical Physics 51(5):3173–3183; Published.** [Nguồn canonical/primary](https://doi.org/10.1002/mp.17038); [DOI 10.1002/mp.17038](https://doi.org/10.1002/mp.17038); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published 2024; official README current count differs from paper after corruption filtering
+
+**VERIFIED trong phạm vi đọc:** full publisher HTML/methods/evaluation and official database/code README; Medical Physics article methods/results; official GitHub README. Crossref DOI + official publisher article + official GitHub repositories checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M37](PAPER_MATRIX.md#m37); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M38 — Performance comparison of prediction filters for respiratory motion tracking in radiotherapy
+
+Alexander Jöhl; Stefanie Ehrbar; Matthias Guckenberger; Stephan Klöck; Mirko Meboldt; Melanie Zeilinger; Stephanie Tanadini-Lang; Marianne Schmid Daners. **2020; Medical Physics 47(2):643–650; Published.** [Nguồn canonical/primary](https://doi.org/10.1002/mp.13929); [DOI 10.1002/mp.13929](https://doi.org/10.1002/mp.13929); arXiv UNKNOWN. Đối chiếu 2026-09-12. Online publication 2019; print issue 2020; canonical citation uses 2020; first online 2019-12-07, issue 2020-02; canonical issue year 2020
+
+**VERIFIED trong phạm vi đọc:** official repository metadata and published article record; methods detail bounded; DOI/publisher record; ETH repository copy. Crossref DOI + ETH repository record checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M38](PAPER_MATRIX.md#m38); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M39 — Real-time prediction and gating of respiratory motion in 3D space using extended Kalman filters and Gaussian process regression network
+
+W. Bukhari; S.-M. Hong. **2016; Physics in Medicine and Biology 61(5):1947–1967; Published.** [Nguồn canonical/primary](https://pubmed.ncbi.nlm.nih.gov/26878653/); [DOI 10.1088/0031-9155/61/5/1947](https://doi.org/10.1088/0031-9155/61/5/1947); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published 2016; 3D extension of 2015 EKF+GPR work
+
+**VERIFIED trong phạm vi đọc:** PubMed record/abstract and primary journal metadata; PubMed 26878653. Crossref/DOI + PubMed record; title/authors/year/volume/pages checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M39](PAPER_MATRIX.md#m39); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M40 — Prediction of real-time cine-MR images during MRI-guided radiotherapy of liver cancer using a GAN–ConvLSTM network
+
+Guodong Jin; Yuxiang Liu; Ran Wei; Bining Yang; Bo Pang; Xinyuan Chen; Hong Quan; Jianrong Dai; Kuo Men. **2025; Medical Physics 52(5):3161–3172; Published.** [Nguồn canonical/primary](https://pmc.ncbi.nlm.nih.gov/articles/PMC12082801/); [DOI 10.1002/mp.17609](https://doi.org/10.1002/mp.17609); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published Medical Physics 2025 issue; DOI checked
+
+**VERIFIED trong phạm vi đọc:** full PMC article metadata/methods/results bounded; PMC12082801; methods and results. Crossref DOI + PMC record; title/authors/year/volume/pages checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M40](PAPER_MATRIX.md#m40); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M41 — Non-stationary transformers-based model for predicting liver motion for interleaved two-dimensional cine magnetic resonance imaging
+
+Suzune Shimizu; Masato Tsuneda; Kota Abe; Takashi Uno; Hiroki Suyari; Yasukuni Mori. **2026; Medical Physics 53:e70241; Published; first online 2025-12-29, issue 2026.** [Nguồn canonical/primary](https://doi.org/10.1002/mp.70241); [DOI 10.1002/mp.70241](https://doi.org/10.1002/mp.70241); arXiv UNKNOWN. Đối chiếu 2026-09-12. First online 2025-12-29; print/issue 2026 Medical Physics 53:e70241; online 2025-12-29, issue 2026-01; canonical issue year 2026
+
+**VERIFIED trong phạm vi đọc:** publisher metadata/abstract and Crossref record; methods detail bounded; DOI landing page and Crossref record. Crossref DOI + Wiley publisher record checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M41](PAPER_MATRIX.md#m41); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M42 — Real-time respiratory motion forecasting with online learning of recurrent neural networks for accurate targeting in externally guided radiotherapy
+
+Michel Pohl; Mitsuru Uesaka; Hiroyuki Takahashi; Kazuyuki Demachi; Ritu Bhusal Chhatkuli. **2025; Computer Methods and Programs in Biomedicine 269:108828; Published.** [Nguồn canonical/primary](https://doi.org/10.1016/j.cmpb.2025.108828); [DOI 10.1016/j.cmpb.2025.108828](https://doi.org/10.1016/j.cmpb.2025.108828); [arXiv 2403.01607](https://arxiv.org/abs/2403.01607). Đối chiếu 2026-09-12. Published 2025; arXiv:2403.01607 tracked separately
+
+**VERIFIED trong phạm vi đọc:** published article metadata/abstract and official repository README; methods detail bounded; DOI landing page; official README references and time-series folder. Crossref/DOI + official repository README checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M42](PAPER_MATRIX.md#m42); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M43 — Dynamic Image Prediction Using Principal Component and Multi-Channel Singular Spectral Analysis: A Feasibility Study
+
+Ritu Bhusal Chhatkuli; Kazuyuki Demachi; Naoki Miyamoto; Mitsuru Uesaka; Akihiro Haga. **2015; Open Journal of Medical Imaging 5:133–142; Published.** [Nguồn canonical/primary](https://www.scirp.org/pdf/ojmi_2015090914071968.pdf); [DOI 10.4236/ojmi.2015.53017](https://doi.org/10.4236/ojmi.2015.53017); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published 2015; DOI checked
+
+**VERIFIED trong phạm vi đọc:** full official PDF and metadata; methods/evaluation read; SCIRP official PDF; methods and results. DOI/publisher PDF metadata checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M43](PAPER_MATRIX.md#m43); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M44 — Signal-aware deep learning–based respiratory motion prediction for lung tumor management
+
+Kaushik Pratim Das; Chandra J.; Partha Pratim Medhi. **2026; Frontiers in Oncology 16:1735140; Published.** [Nguồn canonical/primary](https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1735140/full); [DOI 10.3389/fonc.2026.1735140](https://doi.org/10.3389/fonc.2026.1735140); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published 2026-02-13; DOI and article number canonical
+
+**VERIFIED trong phạm vi đọc:** full official Frontiers HTML methods/results/discussion; Frontiers in Oncology article §§Methods, Results, Data availability and Discussion. Official Frontiers article and DOI record checked 2026-09-12; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M44](PAPER_MATRIX.md#m44); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M45 — Trackerless Freehand Ultrasound with Sequence Modelling and Auxiliary Transformation Over Past and Future Frames
+
+Qi Li; Ziyi Shen; Qian Li; Dean C. Barratt; Thomas Dowrick; Matthew J. Clarkson; Tom Vercauteren; Yipeng Hu. **2023; IEEE ISBI 2023, pp. 1-5; Peer-reviewed conference paper; arXiv 2211.04867v2.** [Nguồn canonical/primary](https://doi.org/10.1109/ISBI53787.2023.10230773); [DOI 10.1109/ISBI53787.2023.10230773](https://doi.org/10.1109/ISBI53787.2023.10230773); [arXiv 2211.04867v2](https://arxiv.org/abs/2211.04867v2). Đối chiếu 2026-09-12. Published ISBI version canonical; arXiv 2211.04867v2 recorded
+
+**VERIFIED trong phạm vi đọc:** Full paper PDF, §§2-3; official code metadata; ISBI paper §§2.1, 3.1-3.3, Table 1. Title/venue/DOI verified through IEEE DOI; authors checked against PDF; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M45](PAPER_MATRIX.md#m45); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M46 — Long-Term Dependency for 3D Reconstruction of Freehand Ultrasound Without External Tracker
+
+Qi Li; Ziyi Shen; Qian Li; Dean C. Barratt; Thomas Dowrick; Matthew J. Clarkson; Tom Vercauteren; Yipeng Hu. **2024; IEEE Transactions on Biomedical Engineering 71(3):1033-1042; Peer-reviewed journal article; arXiv 2310.10248.** [Nguồn canonical/primary](https://doi.org/10.1109/TBME.2023.3325551); [DOI 10.1109/TBME.2023.3325551](https://doi.org/10.1109/TBME.2023.3325551); [arXiv 2310.10248](https://arxiv.org/abs/2310.10248). Đối chiếu 2026-09-12. Published journal version canonical; arXiv 2310.10248 recorded
+
+**VERIFIED trong phạm vi đọc:** Full publisher/HTML paper and UCL record; TBME methods/results; UCL record. Title/authors/year/venue/DOI verified via IEEE DOI and UCL record; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M46](PAPER_MATRIX.md#m46); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M47 — Privileged Anatomical and Protocol Discrimination in Trackerless 3D Ultrasound Reconstruction
+
+Qi Li; Ziyi Shen; Qian Li; Dean C. Barratt; Thomas Dowrick; Matthew J. Clarkson; Tom Vercauteren; Yipeng Hu. **2023; ASMUS 2023 / MICCAI LNCS 14337:142-151; Peer-reviewed workshop/proceedings paper; arXiv 2308.10293.** [Nguồn canonical/primary](https://doi.org/10.1007/978-3-031-44521-7_14); [DOI 10.1007/978-3-031-44521-7_14](https://doi.org/10.1007/978-3-031-44521-7_14); [arXiv 2308.10293](https://arxiv.org/abs/2308.10293). Đối chiếu 2026-09-12. Published LNCS version canonical; arXiv 2308.10293 recorded
+
+**VERIFIED trong phạm vi đọc:** Accepted/full PDF and official UCL record; MICCAI/ASMUS paper methods and experiments. Title/venue/DOI verified at Springer DOI; authors checked against PDF; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M47](PAPER_MATRIX.md#m47); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M48 — Nonrigid Reconstruction of Freehand Ultrasound Without a Tracker
+
+Qi Li; Ziyi Shen; Qianye Yang; Dean C. Barratt; Matthew J. Clarkson; Tom Vercauteren; Yipeng Hu. **2024; MICCAI 2024, LNCS 15004, pp. 689-699; Peer-reviewed conference paper; arXiv 2407.05767.** [Nguồn canonical/primary](https://papers.miccai.org/miccai-2024/568-Paper2245.html); [DOI 10.1007/978-3-031-72083-3_64](https://doi.org/10.1007/978-3-031-72083-3_64); [arXiv 2407.05767](https://arxiv.org/abs/2407.05767). Đối chiếu 2026-09-12. Published MICCAI version canonical; arXiv 2407.05767 recorded
+
+**VERIFIED trong phạm vi đọc:** Full PDF; official MICCAI page and code README; MICCAI paper methods/results and Tables 1-2. Title/venue/DOI verified through MICCAI/Springer; author list requires full proceedings check; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M48](PAPER_MATRIX.md#m48); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### G33 — GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction
+
+Xiao Chen; Quanyi Li; Tai Wang; Tianfan Xue; Jiangmiao Pang. **2024; CVPR 2024, pp. 16436-16445; Peer-reviewed conference paper; arXiv 2402.16174.** [Nguồn canonical/primary](https://openaccess.thecvf.com/content/CVPR2024/html/Chen_GenNBV_Generalizable_Next-Best-View_Policy_for_Active_3D_Reconstruction_CVPR_2024_paper.html); DOI UNKNOWN; [arXiv 2402.16174v3](https://arxiv.org/abs/2402.16174v3). Đối chiếu 2026-09-12. Published CVPR version canonical; arXiv 2402.16174 recorded; DOI UNKNOWN
+
+**VERIFIED trong phạm vi đọc:** full methods/evaluation HTML + official CVF/project metadata; Root: arXiv v3 §§3.1–3.3, §4, Appendix A.1; CVF metadata. Title/year/venue verified against CVF; complete authors/DOI not independently recorded. Methods/evaluation ở [hồ sơ G33](PAPER_MATRIX.md#g33); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M49 — Automatic Probe Movement Guidance for Freehand Obstetric Ultrasound
+
+Richard Droste; Lior Drukker; Aris T. Papageorghiou; J. Alison Noble. **2020; MICCAI 2020, LNCS 12263, pp. 583-592; Peer-reviewed conference paper; arXiv 2007.04480.** [Nguồn canonical/primary](https://pmc.ncbi.nlm.nih.gov/articles/PMC7116254/); [DOI 10.1007/978-3-030-59716-0_56](https://doi.org/10.1007/978-3-030-59716-0_56); [arXiv 2007.04480](https://arxiv.org/abs/2007.04480). Đối chiếu 2026-09-12. Published MICCAI version canonical; arXiv 2007.04480 recorded
+
+**VERIFIED trong phạm vi đọc:** Primary PMC full text and arXiv metadata; MICCAI paper methods/results; PMC full text. DOI/venue/year verified; author list not duplicated here because source is canonical; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M49](PAPER_MATRIX.md#m49); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M50 — RecON: Online learning for sensorless freehand 3D ultrasound reconstruction
+
+Mingyuan Luo; Xin Yang; Hongzhang Wang; Haoran Dou; Xindi Hu; Yuhao Huang; Nishant Ravikumar; Songcheng Xu; Yuanji Zhang; Yi Xiong; Wufeng Xue; Alejandro F. Frangi; Dong Ni; Litao Sun. **2023; Medical Image Analysis 87, 102810; Peer-reviewed journal article.** [Nguồn canonical/primary](https://doi.org/10.1016/j.media.2023.102810); [DOI 10.1016/j.media.2023.102810](https://doi.org/10.1016/j.media.2023.102810); arXiv UNKNOWN. Đối chiếu 2026-09-12. Published journal version; no arXiv record verified
+
+**VERIFIED trong phạm vi đọc:** Publisher abstract, official code/README and metadata; not full methods; Publisher DOI page and official GitHub README. Title/year/venue/DOI verified via publisher DOI; root Crossref DOI/title/authors/year/type cross-check 2026-09-12; typographic spaces/hyphens normalized, primary names retained. Methods/evaluation ở [hồ sơ M50](PAPER_MATRIX.md#m50); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+### M51 — TUS-REC2024: A Challenge to Reconstruct 3D Freehand Ultrasound Without External Tracker
+
+Qi Li; Shaheer U. Saeed; Yuliang Huang; Mingyuan Luo; Zhongnuo Yan; Jiongquan Chen; Xin Yang; Dong Ni; Nektarios Winter; Phuc Nguyen; Lucas Steinberger; Caelan Haney; Yuan Zhao; Mingjie Jiang; Bowen Ren; SiYeoul Lee; Seonho Kim; MinKyung Seo; MinWoo Kim; Yimeng Dou; Zhiwei Zhang; Yin Li; Tomy Varghese; Dean C. Barratt; Matthew J. Clarkson; Tom Vercauteren; Yipeng Hu. **2025; UNKNOWN; arXiv 2506.21765v2; arXiv challenge paper v2; venue UNKNOWN.** [Nguồn canonical/primary](https://arxiv.org/html/2506.21765); DOI UNKNOWN; [arXiv 2506.21765v2](https://arxiv.org/abs/2506.21765v2). Đối chiếu 2026-09-12. v2 dated 2025-11-13; venue/DOI UNKNOWN; policy says CC BY NC SA/research-only
+
+**VERIFIED trong phạm vi đọc:** Official data/task/assessment/policy pages, arXiv HTML §§2-4, Zenodo metadata; arXiv §§2-4; official data/task/assessment/policy; Zenodo Parts 1-2/validation. Counts/config/split/license policy cross-checked across official pages and challenge paper; per-scan details UNKNOWN. Methods/evaluation ở [hồ sơ M51](PAPER_MATRIX.md#m51); contribution/limitation/relevance là INTERPRETATION / HYPOTHESIS.
+
+## Metadata nguồn bổ sung đợt 2
+
+- **LUMIERE** [MRI release API v1](https://api.figshare.com/v2/articles/21249516), DOI 10.6084/m9.figshare.21249516.v1; [README v1](https://api.figshare.com/v2/articles/21266241), DOI 10.6084/m9.figshare.21266241.v1; [PDF README](https://ndownloader.figshare.com/files/37983597). Đã đọc API/README và ZIP central directory. CC0 API và non-commercial README là conflict chưa giải quyết. Không đọc image members. Count 62 là derived audit, không claim của paper; [aggregate provenance](research_artifacts/2026-09-12_metadata_audit.json).
+- **BreastDCEDL** [official repository](https://github.com/naomifridman/BreastDCEDL), [CSV pinned commit](https://raw.githubusercontent.com/naomifridman/BreastDCEDL/ed4bfe7a3407b722bc32c01ba38aa3619cb73ab5/BreastDCEDL_metadata.csv). CSV/README/code semantics đã đọc: intravisit contrast phases, không treatment-visit depth; derived 2,070 rows. Không cộng thành một public longitudinal cohort mới.
+- **TUS-REC2024** [data](https://github-pages.ucl.ac.uk/tus-rec-challenge/TUS-REC2024/data.html), [policy](https://github-pages.ucl.ac.uk/tus-rec-challenge/TUS-REC2024/policies.html), [Zenodo Part 1](https://zenodo.org/records/11178509), [Part 2](https://zenodo.org/records/11180795), [validation](https://zenodo.org/records/12979481). Policy link xác nhận CC BY-NC-SA 4.0/research limits. Part descriptions không được cộng thành disjoint subjects; chưa audit archives. Challenge paper được ghi một hàng riêng trong matrix.
+- **I-SPY2/ACRIN 6698** [source descriptor](https://wiki.cancerimagingarchive.net/plugins/viewsource/viewpagesrc.action?pageId=70230072), [data dictionary](https://wiki.cancerimagingarchive.net/download/attachments/50135447/ACRIN%206698%20ISPY2%20DWI%20and%20DCE%20MRI%20Data%20Descriptions_20210520.pdf?api=v2). Đã xác minh protocol bốn mốc, missing/unanalyzable objects và timing best-effort; chưa patient-level all-four intersection.
+- **Wimmert scalar respiratory signal benchmark** [database](https://github.com/IPMI-ICNS-UKE/respiratory-signal-database), [prediction code](https://github.com/IPMI-ICNS-UKE/respiratory-motion-prediction). README/full paper đọc để phân biệt 2,510/419 raw với 2,502/416 sau loại corrupted records; không phải visual anatomy cohort. Data-object terms ngoài repository license vẫn cần kiểm tra trước use.

@@ -1,0 +1,28 @@
+{
+  "markdown_files": 17,
+  "internal_links": 362,
+  "paper_rows": 90,
+  "columns": 36,
+  "paper_dois": 49,
+  "dataset_profiles": 13,
+  "questions": 8,
+  "errors": [],
+  "audited_at": "2026-09-12",
+  "timezone": "Asia/Bangkok",
+  "scope": "Documentation structure and bibliography consistency; source/method review separately recorded in RESEARCH_LOG.md",
+  "git_diff_check": "PASS",
+  "metadata_recount": "PASS: LUMIERE directory and BreastDCEDL CSV aggregate counts/hash matched",
+  "source_checks_round2": {
+    "root_cv_metric_dois": 6,
+    "ab_dois_including_existing": 24,
+    "ab_resolved": 24,
+    "prior_round1_dois_checked_then": 21
+  },
+  "limitations": [
+    "No model replication/training",
+    "No patient image/label usability audit",
+    "No clinical or causal validation",
+    "No claim of exhaustive literature/citation graph coverage"
+  ],
+  "paper_csv_sha256": "8582c02133d1f5332b733c4210ab0f0e729ec2ae27e616d6840febe806de3133"
+}

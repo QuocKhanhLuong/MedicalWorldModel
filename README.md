@@ -16,10 +16,11 @@ Repo chính thức của dự án nghiên cứu **Medical World Model**.
 | [Visual world model landscape](docs/surveys/VISUAL_WORLD_MODELS_LANDSCAPE.md) | Lineage, frontier và định nghĩa vận hành; CV → năng lực có thể chuyển |
 | [Medical world models survey](docs/surveys/MEDICAL_WORLD_MODELS_SURVEY.md) | Phân tích hệ/state/transition/use case và so sánh A/B/C |
 | [Transfer gaps](docs/surveys/TRANSFER_GAPS.md) | Adversarial prior-art search và những novelty claims bị bác bỏ |
-| [Paper matrix](docs/PAPER_MATRIX.md) · [CSV](docs/paper_matrix.csv) | 55 paper, metadata/phiên bản, methods, evaluation và giới hạn đọc |
-| [Dataset feasibility](docs/DATASET_FEASIBILITY.md) | 13 nguồn dữ liệu; access, thời gian/nhãn, UNKNOWN và leakage audit cần làm |
+| [Paper matrix](docs/PAPER_MATRIX.md) · [CSV](docs/paper_matrix.csv) | 90 paper, metadata/phiên bản, methods, evaluation và giới hạn đọc |
+| [Dataset feasibility](docs/DATASET_FEASIBILITY.md) | 13 hồ sơ chính; metadata recount LUMIERE/BreastDCEDL, terms, thời gian/nhãn và UNKNOWN |
 | [Open questions](docs/OPEN_QUESTIONS.md) | 8 câu hỏi chưa chọn, baseline/falsifiers, ranking và thông tin còn thiếu |
 | [Sổ nguồn tham khảo](docs/REFERENCES.md) | Nguồn sơ cấp đã đối chiếu, crosswalk từ đầu mối cũ và giới hạn xác minh |
+| [Deep audit A/B/C và state/evaluation](docs/surveys/RESEARCH_LOG.md#đợt-2--audit-methods-temporal-contract-và-metadata) | Bốn dossier: prior art đối kháng, state-value tests, calibration và dữ liệu thực có |
 | [Research log](docs/surveys/RESEARCH_LOG.md) | Skills/phương pháp, citation-integrity pass và giới hạn của survey |
 | [Nhật ký thay đổi](docs/CHANGELOG.md) | Những thay đổi có ý nghĩa về phạm vi, kiến thức, dữ liệu và thí nghiệm |
 | [Quy ước cho tác nhân làm việc](AGENTS.md) | Cách đọc, cập nhật và đồng bộ docs vào GitHub |
@@ -40,4 +41,4 @@ Theo yêu cầu của chủ dự án ngày **07/09/2026**, mỗi khi có thay đ
 
 Repo công khai chỉ chứa tài liệu phù hợp để công bố. Không commit dữ liệu nhận diện bệnh nhân, hồ sơ lâm sàng riêng tư, thông tin truy cập hay dữ liệu bị hạn chế phân phối.
 
-Cập nhật hồ sơ: **2026-09-12** · Múi giờ: **Asia/Bangkok**. Survey nguồn đã thực hiện; dataset manifest audit và thực nghiệm chưa thực hiện. A/B/C đều chưa chọn.
+Cập nhật hồ sơ: **2026-09-12** · Múi giờ: **Asia/Bangkok**. Survey và audit methods đã thực hiện; metadata audit giới hạn có aggregate recount, chưa đọc ảnh/nhãn hoặc thực nghiệm. A/B/C đều chưa chọn.

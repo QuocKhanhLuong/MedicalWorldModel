@@ -148,11 +148,11 @@ Thang **1–5**: 5 thuận lợi hơn cho clarity, novelty plausibility, data fe
 
 | Ưu tiên audit | Q | Scientific clarity | Novelty plausibility | Data feasibility | Evaluation quality | Clinical relevance | Risk ↑ | CV fit |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Q1 A motion state | 5 | 2 | 4 | 5 | 4 | 3 | 5 |
-| 2 | Q4 B acquisition memory | 5 | 3 | 3 | 4 | 3 | 3 | 5 |
+| 1 | Q1 A motion state | 5 | 2 | 3 | 5 | 4 | 3 | 5 |
+| 2 | Q4 B acquisition memory | 5 | 2 | 3 | 4 | 3 | 3 | 5 |
 | 3 | Q6 C anatomy trend | 4 | 2 | 3 | 4 | 3 | 3 | 4 |
 | 4 | Q2 A calibrated motion | 4 | 2 | 3 | 5 | 4 | 4 | 4 |
-| 5 | Q5 C glioma state | 4 | 3 | 2 | 4 | 4 | 5 | 3 |
+| 5 | Q5 C glioma state | 4 | 2 | 3 | 4 | 4 | 5 | 3 |
 | 6 | Q8 C breast response | 4 | 2 | 2 | 4 | 4 | 5 | 3 |
 | 7 | Q3 A cardiac prefix | 4 | 2 | 2 | 3 | 3 | 4 | 4 |
 | 8 | Q7 C MS events | 4 | 2 | 1 | 3 | 4 | 5 | 3 |
@@ -185,10 +185,29 @@ Q2 là hướng uncertainty độc lập hoặc phép kiểm tra bổ sung, chư
 
 ## Hành động nghiên cứu tiếp theo
 
-1. Audit metadata nhỏ cho **một nguồn của mỗi A/B/C** nếu access cho phép; lập feasible temporal-contract table và số trajectory thực, chưa train mô hình lớn.
+1. Tiếp tục metadata audit: LUMIERE đã có aggregate depth count; còn label/interval intersection. A cần frame-rate/jump/label manifest; B cần timestamp/pose/invalid-record alignment. Chưa train mô hình lớn.
 2. Chốt một endpoint/horizon có lý do với chuyên gia; đánh dấu label/care/pose nào quan sát được.
 3. Chạy minimal simple-baseline headroom experiment với held-out patients và prefix-only preprocessing.
 4. Tìm prior art lần nữa bằng chính **endpoint + state + horizon + dataset + baseline** đã thu hẹp, gồm backward/forward citations của đối chứng mạnh nhất.
 5. Chủ dự án chọn bài toán sau khi thấy feasibility và kết quả bác bỏ/ủng hộ baseline hypothesis. Chỉ sau đó mới cân nhắc thiết kế phương pháp.
 
 Không cần người nghiên cứu phê duyệt kiến trúc hoặc chọn modality để hoàn tất survey này; thông tin thiếu được ghi như điều kiện cho **bước nghiên cứu kế tiếp**, không ngụ ý đã có data hoặc kết quả.
+
+## Adjudication đợt 2 — thay đổi có căn cứ và điều chưa đóng
+
+**VERIFIED** nằm trong các audit được liên kết; sửa điểm và câu hỏi dưới đây là **INTERPRETATION / HYPOTHESIS**. Không đổi thành topic đã được chọn.
+
+| Q | Bằng chứng mới | Điều kiện/falsifier được siết |
+| --- | --- | --- |
+| Q1 | [A audit](surveys/deep_dives/FAMILY_A_FORECASTING_AUDIT.md): manifold/PCA, probabilistic 4D, online state-space và strong signal benchmarks đã tồn tại. TrackRAD có jumps/selected labels. | Data score 4→3 vì dense future endpoints chưa được xác minh. So anatomy state với geometry/velocity/phase và history-direct cùng prefix; không đủ headroom thì bỏ claim cần learned state. |
+| Q2 | [Sangalli/MELBA/CAFHT](surveys/deep_dives/STATE_AND_EVALUATION_AUDIT.md): conformal medical forecast và uncertainty calibration có prior art; online feedback khác fixed-prefix trajectory. | Không claim first uncertainty/calibration. Chọn endpoint marginal hay whole-path trước; matched coverage/sharpness/risk baseline; split theo patient. |
+| Q3 | [Gunnarsson, A audit](surveys/deep_dives/FAMILY_A_FORECASTING_AUDIT.md): đã forecast EchoNet suffix; ACDC branch có interpolation. | Phải kiểm tra dense contour và natural-time prefix; ED/ES tương lai không được định phase input. Phase extrapolation ngang bằng là falsifier. |
+| Q4 | [B audit](surveys/deep_dives/FAMILY_B_ACQUISITION_AUDIT.md): long history, protocol/anatomy discrimination, nonrigid reconstruction, adaptation đều có prior art. | Novelty score 3→2. So memory khi pose/coverage/protocol matched; query là conditioning được cung cấp, không command. Nếu support/coverage giải thích hết gain thì hạ claim anatomy state. |
+| Q5 | [C audit](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md): 62 LUMIERE patients có ≥4 distinct nominal weeks và bốn MRI sequences; 2+2 usable chưa xác minh. Petersen có oracle volume selection; TaDiff external chỉ MRI metrics. | Data score 2→3 chỉ cho triển vọng audit; novelty 3→2. Loại CFB-GBM khỏi protocol bốn visits. Đếm giao label/horizon trước, không coi 62 là cohort thực nghiệm. |
+| Q6 | BrLP/Δ-LFM và [C audit](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md) củng cố individualization/regional endpoints là prior art gần. | So individual/mixed-effects trend và giữ independent segmentation/readout. Uncertainty–error association không thay calibration. |
+| Q7 | MS public pilot và stochastic clinical trajectories đã được đối chiếu; chưa có cohort labeled depth đủ lớn được xác minh. [C audit](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md) | Data gate chưa qua; không tạo missing future lesions bằng interpolation/generation. |
+| Q8 | I-SPY2 có T0–T3 protocol, nhưng derived BreastDCEDL `n_times` là intravisit phases; Stowers đã biology+MRI response model. [C audit](surveys/deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md) | Không dùng phase count chứng minh visit depth. Đếm patient × all-four visits × FTV/label × time trước; observed-care forecast vẫn không là treatment effect. |
+
+Thứ tự audit trong bảng ranking được giữ như một phán đoán có điều kiện; không tuyên bố khác biệt điểm nhỏ có ý nghĩa định lượng. LUMIERE depth tốt hơn dự kiến được cân bằng bởi chưa audit labels/intervals và conflict CC0/non-commercial trong README. Tất cả MICCAI scopes vẫn có điều kiện, chưa có novelty được xác lập.
+
+**Bốn câu hỏi ưu tiên còn lại:** anatomy/history có thêm thông tin dự báo ngoài simple motion state (Q1); acquisition memory có thêm giá trị ngoài coverage/protocol (Q4); hai future lesion states có dự báo được từ fixed prefix và nhãn đáng tin (Q5); individual anatomical state có hơn regional trend và tái sử dụng được (Q6). Q2 bổ sung câu hỏi về uncertainty nhưng chưa quyết định ghép vào Q1/Q5. Đây là hướng nghiên cứu tiếp, không lựa chọn A/B/C.

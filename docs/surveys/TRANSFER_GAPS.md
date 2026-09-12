@@ -77,3 +77,28 @@ Các query dưới đây là các lượt truy tìm đã thực hiện, kết qu
 ## Kết luận nghiên cứu — INTERPRETATION / HYPOTHESIS
 
 Không gap nào được “accepted as novel” trong đợt này. Tám câu hỏi ở [OPEN_QUESTIONS](../OPEN_QUESTIONS.md) là **candidate questions with falsifiers**, không phải tám novelty claims. Ưu tiên tiếp theo là tìm một dataset/endpoint làm phép thử rõ ràng, rồi thử xem baseline đã giải quyết bài toán chưa. Một kết quả cho thấy state learned không thêm lợi ích là lý do hợp lệ để bỏ hướng, không phải lý do tăng độ phức tạp mô hình.
+
+## Đợt 2 — phản chứng mới với novelty về state và uncertainty
+
+| Claim cần tìm cách bác bỏ | VERIFIED: nguồn phản chứng | INTERPRETATION / HYPOTHESIS: điều còn phải chứng minh |
+| --- | --- | --- |
+| State định nghĩa bằng tương lai là framing mới | [Littman–Sutton–Singh 2001](../PAPER_MATRIX.md#g27) | Không claim mới ở định nghĩa; phải có incremental predictive value và phạm vi sufficiency cụ thể |
+| Chưa có calibrated medical trajectory forecasting | [Sangalli MICCAI 2025](../PAPER_MATRIX.md#m28) | Endpoint angle/magnitude đã được chấm; full-path anatomy risk vẫn cần question/data/novelty audit riêng |
+| Chưa có medical calibration baseline đơn giản | [Laves MELBA 2021](../PAPER_MATRIX.md#m29) | Đối chiếu sigma/residual calibration thích hợp; image regression không tự là temporal forecasting |
+| Simultaneous trajectory bands là kỹ thuật mới | [CAFHT ICML 2024](../PAPER_MATRIX.md#k05) | Tách online observations với fixed-prefix forecasts; patient/trajectory exchangeability và conditional coverage phải rõ |
+| Chấm joint distribution bằng một score là đủ | [Gneiting–Raftery](../PAPER_MATRIX.md#k03), [Scheuerer–Hamill](../PAPER_MATRIX.md#k04) | Marginal accuracy, dependence, bias và event risk phải cùng được kiểm tra; không claim score tự chứng minh simulator fidelity |
+| Functional world-model evaluation còn hoàn toàn trống | [WorldSimBench/WorldArena](deep_dives/STATE_AND_EVALUATION_AUDIT.md) | Một medical endpoint/dataset có thể cần evaluation tốt hơn, nhưng “beyond visual quality” tự nó đã có prior art |
+
+Tìm độc lập bằng các cụm “medical imaging predictive state representation”, “state sufficiency”, “conformal forecasting surgical instrument”, “longitudinal imaging prediction calibration prediction interval”, “disease progression energy score”, “medical trajectory variogram score”; tìm tiếp theo exact title và canonical proceedings. Kết quả không trúng một medical term **không** được dùng làm chứng cứ absence. [Audit chi tiết](deep_dives/STATE_AND_EVALUATION_AUDIT.md) giữ riêng mô tả nguồn và phân tích của dự án.
+
+## Adversarial audit A/B/C đợt 2 — claim rộng không còn đứng được
+
+| Claim bị thử bác bỏ | VERIFIED prior art / audit nguồn | INTERPRETATION / HYPOTHESIS còn có thể kiểm tra |
+| --- | --- | --- |
+| Medical chưa có learned geometric state hoặc stochastic deformation forecast | Liu 2016 manifold state; Pham 2019 DFM/PCA; Romaguera 2021 probabilistic 4D; Gunnarsson 2024 state-space; [A dossier](deep_dives/FAMILY_A_FORECASTING_AUDIT.md) | Incremental predictive value với cùng history, independent geometry labels và patient/scanner shift. |
+| Medical chưa dùng uncertainty cho motion/gating | Bukhari 2015/2016 EKF-GP/GPRN; Li 2023 gating endpoints; Sangalli 2025 conformal forecast; [A](deep_dives/FAMILY_A_FORECASTING_AUDIT.md), [calibration audit](deep_dives/STATE_AND_EVALUATION_AUDIT.md) | Calibrated state risk dưới defined horizon/shift, so strong residual/GP/conformal baseline; không claim component mới. |
+| Anatomy/acquisition memory và nonrigid state là novelty | Trackerless sequence modelling 2023; Long-Term Dependency TBME 2024; protocol discrimination ASMUS 2023; nonrigid MICCAI 2024; RecON 2023; [B dossier](deep_dives/FAMILY_B_ACQUISITION_AUDIT.md) | Future-view prediction từ prefix, matched coverage/protocol, independent state readout và unsupported-query behavior. |
+| Patient-specific continuous-time stochastic disease simulation là novelty | Petersen, ImageFlowNet, Lachinov, BrLP, Δ-LFM, Pash, Stowers; [C dossier](deep_dives/FAMILY_C_LONGITUDINAL_AUDIT.md) | Reliable state-level multi-future evaluation, history sufficiency, calibration và usable public-data protocol cụ thể. |
+| General CV đã có physical ground-truth score có thể dùng nguyên xi cho medical | WorldModelBench/WorldArena dùng human/VLM/estimated proxies; Physics-IQ đo diễn tiến motion dưới controlled scenes; [CV audit](deep_dives/STATE_AND_EVALUATION_AUDIT.md) | Thiết kế endpoint có ground truth phù hợp anatomy/device, kiểm tra metric với perturbation và uncertainty; không transfer tên metric như evidence. |
+
+Adversarial search đã làm novelty **hẹp hơn**, không xác nhận novelty của phần còn lại. Một benchmark trung thực, baseline thắng hoặc state không có giá trị bổ sung là kết quả nghiên cứu hợp lệ. Cần lặp search theo endpoint+state+horizon+release sau khi data gate đóng; chưa đủ để tự chọn paper topic.

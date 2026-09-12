@@ -90,3 +90,9 @@ Các mức này là **rubric của survey**, không phải paper nào cũng ph�
 | Long rollout và hierarchical time | Kiểm tra ổn định qua các thang thời gian | Beat/respiratory phase; intravisit kinetics; visits | Không ghép ba loại thời gian thành một transition |
 
 Xem [survey y khoa](MEDICAL_WORLD_MODELS_SURVEY.md), [kiểm tra novelty](TRANSFER_GAPS.md) và [câu hỏi chưa chọn](../OPEN_QUESTIONS.md).
+
+## Đợt 2 — kiểm toán các tiêu chuẩn đánh giá của frontier
+
+**VERIFIED:** lineage state còn có [Predictive Representations of State (2001)](../PAPER_MATRIX.md#g27), mô hình hóa tương lai qua core tests. Các benchmark [WorldSimBench](../PAPER_MATRIX.md#g28), [WorldModelBench](../PAPER_MATRIX.md#g29), [WorldArena](../PAPER_MATRIX.md#g30), [WorldArena 2.0](../PAPER_MATRIX.md#g31) và [Physics-IQ](../PAPER_MATRIX.md#g32) đo những khía cạnh khác nhau: human-rated violations, motion pattern, policy ranking, executed success và RL-environment utility. Không có một điểm tổng hợp chung đã xác nhận mọi khía cạnh này.
+
+**INTERPRETATION / HYPOTHESIS:** chuyển giao có giá trị nhất là **cách đặt phép thử có thể thất bại**: state chứa thêm thông tin gì, transition có hơn direct prediction, rollout có nhận truth mới, metric có đo đúng target và task success thuộc thành phần nào. [State and evaluation audit](deep_dives/STATE_AND_EVALUATION_AUDIT.md) đọc sâu methods/appendices, phân biệt physical measurements với proxies và đưa ra hợp đồng kiểm chứng áp dụng cho A/B/C. Không nhận hierarchy theo output modality của một benchmark làm định nghĩa bắt buộc cho dự án.
